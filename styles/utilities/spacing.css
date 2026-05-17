@@ -1,0 +1,27 @@
+/**
+ * Layout helpers — spacing scale = primitive keys (0,1,2,…,20).
+ */
+@utility section-x {
+  padding-inline: var(--primitive-space-4);
+}
+
+@utility section-y {
+  padding-block: var(--primitive-space-6);
+}
+
+@utility section-inset {
+  padding-inline: var(--primitive-space-4);
+  padding-block: var(--primitive-space-6);
+}
+
+@utility stack-gap-sm {
+  gap: var(--primitive-space-2);
+}
+
+@utility stack-gap-md {
+  gap: var(--primitive-space-4);
+}
+
+@utility stack-gap-lg {
+  gap: var(--primitive-space-6);
+}

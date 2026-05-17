@@ -1,0 +1,18 @@
+/**
+ * Elevation helpers — semantic roles.
+ */
+@utility shadow-semantic-rest {
+  box-shadow: var(--elevation-rest);
+}
+
+@utility shadow-semantic-card {
+  box-shadow: var(--elevation-card);
+}
+
+@utility shadow-semantic-popover {
+  box-shadow: var(--elevation-popover);
+}
+
+@utility shadow-semantic-modal {
+  box-shadow: var(--elevation-modal);
+}

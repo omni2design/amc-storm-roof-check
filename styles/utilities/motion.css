@@ -1,0 +1,30 @@
+/**
+ * Motion — duration / easing from primitives.
+ */
+@utility motion-transition {
+  transition-property: color, background-color, border-color, text-decoration-color, fill, stroke, opacity, box-shadow,
+    transform, filter, backdrop-filter;
+  transition-duration: var(--primitive-duration-fast);
+  transition-timing-function: var(--primitive-ease-standard);
+}
+
+@utility motion-transition-slow {
+  transition-duration: var(--primitive-duration-normal);
+  transition-timing-function: var(--primitive-ease-emphasized);
+}
+
+@utility motion-safe {
+  transition-duration: var(--primitive-duration-fast);
+  transition-timing-function: var(--primitive-ease-standard);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .motion-safe {
+    transition-duration: 1ms !important;
+  }
+
+  .motion-transition,
+  .motion-transition-slow {
+    transition-duration: 1ms !important;
+  }
+}

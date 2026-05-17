@@ -1,0 +1,104 @@
+/**
+ * Semantic typography scale.
+ */
+@utility text-display {
+  font-size: var(--type-display-size);
+  line-height: var(--type-display-leading);
+  font-weight: var(--type-display-weight);
+  letter-spacing: var(--type-display-tracking);
+}
+
+@utility text-title {
+  font-size: var(--type-title-size);
+  line-height: var(--type-title-leading);
+  font-weight: var(--type-title-weight);
+  letter-spacing: var(--type-title-tracking);
+}
+
+@utility text-heading {
+  font-size: var(--type-heading-size);
+  line-height: var(--type-heading-leading);
+  font-weight: var(--type-heading-weight);
+}
+
+@utility text-body {
+  font-size: var(--type-body-size);
+  line-height: var(--type-body-leading);
+  font-weight: var(--type-body-weight);
+}
+
+@utility text-body-strong {
+  font-size: var(--type-body-strong-size);
+  line-height: var(--type-body-strong-leading);
+  font-weight: var(--type-body-strong-weight);
+}
+
+@utility text-caption {
+  font-size: var(--type-caption-size);
+  line-height: var(--type-caption-leading);
+  font-weight: var(--type-caption-weight);
+}
+
+/** Figma Caption — 10px / 14px (140%), regular, 0.5% tracking */
+@utility text-caption-10 {
+  font-size: var(--primitive-font-size-2xs);
+  line-height: 1.4;
+  font-weight: var(--primitive-font-weight-regular);
+  letter-spacing: 0.005em;
+}
+
+@utility text-label {
+  font-size: var(--type-label-size);
+  line-height: var(--type-label-leading);
+  font-weight: var(--type-label-weight);
+}
+
+@utility text-2xs-leading {
+  font-size: var(--primitive-font-size-2xs);
+  line-height: var(--primitive-line-height-2xs);
+}
+
+@utility text-xs-leading {
+  font-size: var(--primitive-font-size-xs);
+  line-height: var(--primitive-line-height-xs);
+}
+
+@utility text-sm-leading {
+  font-size: var(--primitive-font-size-sm);
+  line-height: var(--primitive-line-height-sm);
+}
+
+@utility text-md-leading {
+  font-size: var(--primitive-font-size-md);
+  line-height: var(--primitive-line-height-md);
+}
+
+@utility text-lg-leading {
+  font-size: var(--primitive-font-size-lg);
+  line-height: var(--primitive-line-height-lg);
+}
+
+/** Figma mobile intake step title — 28px / 36px bold */
+@utility text-intake-title {
+  font-size: var(--primitive-font-size-3xl);
+  line-height: var(--primitive-line-height-xl);
+  font-weight: var(--primitive-font-weight-bold);
+  letter-spacing: -0.07px;
+}
+
+/** Figma landing hero — 36px / 44px bold */
+@utility text-hero-headline {
+  font-size: var(--primitive-font-size-5xl);
+  line-height: var(--primitive-line-height-2xl);
+  font-weight: var(--primitive-font-weight-bold);
+  letter-spacing: -0.18px;
+}
+
+/** Figma trust overline — 10px semibold uppercase */
+@utility text-overline {
+  font-size: var(--primitive-font-size-2xs);
+  line-height: 1.4;
+  font-weight: var(--primitive-font-weight-semibold);
+  letter-spacing: 0.3px;
+  text-transform: uppercase;
+}

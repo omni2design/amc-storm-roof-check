@@ -1,0 +1,19 @@
+/**
+ * Interactive affordances — selection scale, elevation lift (Figma card interactions).
+ */
+@utility interactive-card {
+  transition-property: box-shadow, transform, border-color, background-color, color;
+  transition-duration: var(--primitive-duration-fast);
+  transition-timing-function: var(--primitive-ease-standard);
+}
+
+@utility interactive-card-selected {
+  box-shadow: var(--elevation-card);
+  transform: scale(1.01);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .interactive-card-selected {
+    transform: none;
+  }
+}

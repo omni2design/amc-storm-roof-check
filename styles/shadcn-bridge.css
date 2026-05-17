@@ -1,0 +1,29 @@
+/**
+ * shadcn/ui compatibility — maps conventional token names → AMC semantic variables only.
+ * After `npx shadcn@latest init`, point `components.json` globals.css at this file or merge imports.
+ * Do not reference --primitive-* here.
+ */
+@layer base {
+  :root {
+    --background: var(--background-default);
+    --foreground: var(--text-primary);
+    --card: var(--surface-card);
+    --card-foreground: var(--text-primary);
+    --popover: var(--surface-raised);
+    --popover-foreground: var(--text-primary);
+    --primary: var(--button-primary-background);
+    --primary-foreground: var(--button-primary-text);
+    --secondary: var(--button-secondary-background);
+    --secondary-foreground: var(--button-secondary-text);
+    --muted: var(--background-muted);
+    --muted-foreground: var(--text-muted);
+    --accent: var(--surface-selected);
+    --accent-foreground: var(--text-primary);
+    --destructive: var(--button-destructive-background);
+    --destructive-foreground: var(--button-destructive-text);
+    --border: var(--border-default);
+    --input: var(--input-border-default);
+    --ring: var(--border-focus);
+    --radius: var(--radius-control);
+  }
+}

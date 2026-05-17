@@ -1,0 +1,18 @@
+/**
+ * Layer 1 — Spacing scale (Figma: space / dimension primitives)
+ * Non-linear scale keys match design tooling (0,1,2,…,20).
+ */
+:root {
+  --primitive-space-0: 0;
+  --primitive-space-1: 0.25rem; /* 4 */
+  --primitive-space-2: 0.5rem; /* 8 */
+  --primitive-space-3: 0.75rem; /* 12 */
+  --primitive-space-4: 1rem; /* 16 */
+  --primitive-space-5: 1.25rem; /* 20 */
+  --primitive-space-6: 1.5rem; /* 24 */
+  --primitive-space-8: 2rem; /* 32 */
+  --primitive-space-10: 2.5rem; /* 40 */
+  --primitive-space-12: 3rem; /* 48 */
+  --primitive-space-16: 4rem; /* 64 */
+  --primitive-space-20: 5rem; /* 80 */
+}

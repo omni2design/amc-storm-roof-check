@@ -1,0 +1,14 @@
+/**
+ * Radius helpers — semantic control + card roles.
+ */
+@utility rounded-control {
+  border-radius: var(--radius-control);
+}
+
+@utility rounded-card {
+  border-radius: var(--radius-card);
+}
+
+@utility rounded-pill {
+  border-radius: var(--radius-pill);
+}

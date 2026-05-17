@@ -1,0 +1,11 @@
+/**
+ * Layer 1 — Stacking (modals, sticky chrome, upload overlays)
+ */
+:root {
+  --primitive-z-base: 0;
+  --primitive-z-sticky: 20;
+  --primitive-z-dropdown: 40;
+  --primitive-z-overlay: 100;
+  --primitive-z-modal: 200;
+  --primitive-z-toast: 300;
+}

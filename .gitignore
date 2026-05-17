@@ -1,0 +1,19 @@
+.next/
+node_modules/
+tsconfig.tsbuildinfo
+.DS_Store
+
+# Local env / secrets
+.env
+.env.local
+.env.*.local
+
+# Figma sync scratch
+public/icons/_figma-temp/
+
+# Unused Figma export sources (app uses .jpg / -opt variants only)
+public/images/figma/landing/hero-roof.jpg
+public/images/figma/landing/hero-roof.webp
+public/images/figma/landing/*.png
+public/images/figma/what-to-expect/*.png
+

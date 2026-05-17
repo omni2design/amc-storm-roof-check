@@ -1,0 +1,7 @@
+/**
+ * Layer 1 — Scrim / overlay paints (alpha on solid ramps)
+ */
+:root {
+  --primitive-color-overlay-navy-45: color-mix(in srgb, var(--primitive-color-navy-950) 45%, transparent);
+  --primitive-color-overlay-black-55: color-mix(in srgb, var(--primitive-color-neutral-950) 55%, transparent);
+}

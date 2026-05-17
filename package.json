@@ -1,0 +1,51 @@
+{
+  "name": "amc-storm-roof-check",
+  "version": "1.0.0",
+  "description": "A homeowner-first storm damage intake and triage tool for All Might Contracting.",
+  "main": "index.js",
+  "scripts": {
+    "dev": "next dev --webpack",
+    "dev:turbo": "next dev --turbopack",
+    "dev:clean": "rm -rf .next && next dev --webpack",
+    "preview": "npm run build && npm run start",
+    "build": "next build",
+    "start": "next start",
+    "lint": "next lint",
+    "sync:icons": "node scripts/sync-figma-icons.mjs",
+    "normalize:icons": "node scripts/normalize-existing-icons.mjs",
+    "generate:favicon": "node scripts/generate-favicon.mjs"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/omni2design/amc-storm-roof-check.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/omni2design/amc-storm-roof-check/issues"
+  },
+  "homepage": "https://github.com/omni2design/amc-storm-roof-check#readme",
+  "dependencies": {
+    "class-variance-authority": "^0.7.1",
+    "clsx": "^2.1.1",
+    "framer-motion": "^12.38.0",
+    "next": "^16.2.4",
+    "react": "^19.2.5",
+    "react-dom": "^19.2.5",
+    "tailwind-merge": "^3.6.0"
+  },
+  "devDependencies": {
+    "@tailwindcss/cli": "^4.2.4",
+    "@tailwindcss/postcss": "^4.2.4",
+    "@types/node": "^25.6.0",
+    "@types/react": "^19.2.14",
+    "@types/react-dom": "^19.2.3",
+    "@xmldom/xmldom": "^0.9.8",
+    "autoprefixer": "^10.5.0",
+    "postcss": "^8.5.14",
+    "svg-path-bbox": "^2.1.0",
+    "tailwindcss": "^4.2.4",
+    "typescript": "^6.0.3"
+  }
+}

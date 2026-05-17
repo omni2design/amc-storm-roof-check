@@ -1,0 +1,55 @@
+/**
+ * Layer 1 — Typography primitives (Figma: type scale)
+ * Sizes in rem (16px root). Line-height: unitless ratios + named pairs for prose.
+ */
+:root {
+  --primitive-font-family-sans: ui-sans-serif, system-ui, sans-serif, "Apple Color Emoji", "Segoe UI Emoji",
+    "Segoe UI Symbol", "Noto Color Emoji";
+  --primitive-font-family-mono: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono",
+    "Courier New", monospace;
+
+  --primitive-font-size-2xs: 0.625rem; /* 10 */
+  --primitive-font-size-xs: 0.75rem; /* 12 */
+  --primitive-font-size-sm: 0.875rem; /* 14 */
+  --primitive-font-size-md: 1rem; /* 16 */
+  --primitive-font-size-lg: 1.125rem; /* 18 */
+  --primitive-font-size-xl: 1.25rem; /* 20 */
+  --primitive-font-size-2xl: 1.5rem; /* 24 */
+  --primitive-font-size-3xl: 1.75rem; /* 28 */
+  --primitive-font-size-4xl: 2rem; /* 32 */
+  --primitive-font-size-5xl: 2.25rem; /* 36 */
+  --primitive-font-size-6xl: 2.5rem; /* 40 */
+  --primitive-font-size-7xl: 3rem; /* 48 */
+
+  /* Line-height ratios (pair with any font-size token) */
+  --primitive-leading-none: 1;
+  --primitive-leading-tight: 1.2;
+  --primitive-leading-snug: 1.3;
+  --primitive-leading-normal: 1.45;
+  --primitive-leading-relaxed: 1.55;
+  --primitive-leading-loose: 1.65;
+
+  /* Stepped line-heights tuned to mobile body copy */
+  --primitive-line-height-2xs: 1.35;
+  --primitive-line-height-xs: 1.4;
+  --primitive-line-height-sm: 1.45;
+  --primitive-line-height-md: 1.5;
+  --primitive-line-height-lg: 1.45;
+  --primitive-line-height-xl: 1.35;
+  --primitive-line-height-2xl: 1.25;
+  --primitive-line-height-3xl: 1.2;
+  --primitive-line-height-4xl: 1.15;
+  --primitive-line-height-5xl: 1.1;
+  --primitive-line-height-6xl: 1.05;
+  --primitive-line-height-7xl: 1.05;
+
+  --primitive-font-weight-light: 300;
+  --primitive-font-weight-regular: 400;
+  --primitive-font-weight-medium: 500;
+  --primitive-font-weight-semibold: 600;
+  --primitive-font-weight-bold: 700;
+
+  --primitive-letter-spacing-tight: -0.02em;
+  --primitive-letter-spacing-normal: 0;
+  --primitive-letter-spacing-wide: 0.02em;
+}

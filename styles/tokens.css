@@ -1,0 +1,13 @@
+/**
+ * Design tokens — Layer 1 (Figma: Brand primitives)
+ * Import order is stable; each partial only defines :root primitives.
+ */
+@import "./primitives/colors.css";
+@import "./primitives/overlays.css";
+@import "./primitives/spacing.css";
+@import "./primitives/opacity.css";
+@import "./primitives/typography.css";
+@import "./primitives/radius.css";
+@import "./primitives/elevation.css";
+@import "./primitives/motion.css";
+@import "./primitives/z-index.css";

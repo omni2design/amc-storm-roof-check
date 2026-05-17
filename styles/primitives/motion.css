@@ -1,0 +1,12 @@
+/**
+ * Layer 1 — Motion primitives (forms, uploads, contractor workflows)
+ */
+:root {
+  --primitive-duration-instant: 0ms;
+  --primitive-duration-fast: 150ms;
+  --primitive-duration-normal: 220ms;
+  --primitive-duration-slow: 320ms;
+  --primitive-ease-standard: cubic-bezier(0.2, 0, 0, 1);
+  --primitive-ease-emphasized: cubic-bezier(0.2, 0, 0, 1);
+  --primitive-ease-decelerate: cubic-bezier(0, 0, 0, 1);
+}

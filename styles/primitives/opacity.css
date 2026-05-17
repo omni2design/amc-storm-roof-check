@@ -1,0 +1,7 @@
+/**
+ * Layer 1 — Opacity primitives (loading, disabled chrome)
+ */
+:root {
+  --primitive-opacity-disabled: 0.5;
+  --primitive-opacity-loading: 0.65;
+}

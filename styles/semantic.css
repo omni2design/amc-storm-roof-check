@@ -1,0 +1,232 @@
+/**
+ * Design tokens — Layer 2 (Figma: Semantic aliases)
+ * Rules: only var(--primitive-*) or var(--semantic-other) references; no raw colors.
+ * Dark overrides: styles/themes/dark.css
+ */
+:root,
+[data-theme="light"] {
+  /* —— Background —— */
+  --background-default: var(--primitive-color-neutral-0);
+  --background-subtle: var(--primitive-color-neutral-50);
+  --background-muted: var(--primitive-color-neutral-100);
+  --background-inverse: var(--primitive-color-navy-950);
+  --background-overlay: var(--primitive-color-overlay-navy-45);
+  --background-canvas: var(--primitive-color-neutral-50);
+  --background-emergency: var(--primitive-color-danger-50);
+
+  /* —— Surface —— */
+  --surface-default: var(--primitive-color-neutral-0);
+  --surface-raised: var(--primitive-color-neutral-0);
+  --surface-card: var(--primitive-color-neutral-0);
+  --surface-muted: var(--primitive-color-neutral-100);
+  --surface-nav-button: var(--primitive-color-brand-light-gray);
+  --surface-inverse: var(--primitive-color-navy-900);
+  --surface-selected: var(--primitive-color-navy-50);
+  --surface-disabled: var(--primitive-color-neutral-100);
+  --surface-input: var(--primitive-color-neutral-0);
+  --surface-warning: var(--primitive-color-warning-50);
+
+  /* —— Text —— */
+  --text-primary: var(--primitive-color-navy-950);
+  --text-secondary: var(--primitive-color-neutral-600);
+  --text-muted: var(--primitive-color-neutral-500);
+  --text-inverse: var(--primitive-color-neutral-0);
+  --text-link: var(--primitive-color-navy-700);
+  --text-link-hover: var(--primitive-color-navy-800);
+  --text-danger: var(--primitive-color-danger-700);
+  --text-success: var(--primitive-color-success-700);
+  --text-warning: var(--primitive-color-warning-700);
+  --text-disabled: var(--primitive-color-neutral-400);
+  --text-on-warning: var(--primitive-color-warning-900);
+  --text-brand: var(--primitive-color-navy-700);
+
+  /* —— Icon modes (Figma: Category + Mode) —— */
+  --icon-default: var(--primitive-color-neutral-600);
+  /** Figma `icon/brand` — navy shape color (#1f3a5f), not AMC red */
+  --icon-brand: var(--primitive-color-navy-700);
+  --icon-inverse: var(--primitive-color-neutral-0);
+  --icon-subtle: var(--primitive-color-neutral-400);
+  --icon-disabled: var(--primitive-color-neutral-300);
+  --icon-urgent: var(--primitive-color-danger-600);
+  --icon-success: var(--primitive-color-success-500);
+  --icon-loading: var(--primitive-color-navy-400);
+  --icon-primary: var(--primitive-color-navy-800);
+  --icon-secondary: var(--primitive-color-neutral-500);
+  --icon-muted: var(--primitive-color-neutral-400);
+  --icon-danger: var(--primitive-color-danger-500);
+  --icon-warning: var(--primitive-color-warning-500);
+
+  /* —— Border —— */
+  --border-default: var(--primitive-color-neutral-200);
+  --border-subtle: var(--primitive-color-neutral-100);
+  --border-strong: var(--primitive-color-navy-700);
+  --border-focus: var(--primitive-color-navy-600);
+  --border-error: var(--primitive-color-danger-500);
+  --border-divider: var(--primitive-color-neutral-200);
+  --border-warning: var(--primitive-color-warning-200);
+
+  /* —— Focus & interaction chrome —— */
+  --focus-ring-shadow: var(--primitive-elevation-focus-ring);
+  --focus-ring-color: var(--primitive-color-navy-600);
+  --state-loading-opacity: var(--primitive-opacity-loading);
+  --state-disabled-opacity: var(--primitive-opacity-disabled);
+
+  /* —— Chrome: progress / meters (shared by product flows) —— */
+  --chrome-progress-indicator: var(--primitive-color-navy-700);
+  --chrome-progress-track: var(--primitive-color-neutral-200);
+
+  /* —— Button — primary —— */
+  --button-primary-background: var(--primitive-color-brand-600);
+  --button-primary-background-hover: var(--primitive-color-brand-800);
+  --button-primary-background-active: var(--primitive-color-brand-900);
+  --button-primary-text: var(--primitive-color-neutral-0);
+  --button-primary-border: transparent;
+
+  /* —— Button — secondary (filled neutral) —— */
+  --button-secondary-background: var(--primitive-color-neutral-0);
+  --button-secondary-background-hover: var(--primitive-color-neutral-50);
+  --button-secondary-text: var(--primitive-color-navy-950);
+  --button-secondary-border: var(--primitive-color-neutral-200);
+
+  /* —— Button — navy —— */
+  --button-navy-background: var(--primitive-color-navy-700);
+  --button-navy-background-hover: var(--primitive-color-navy-800);
+  --button-navy-background-active: var(--primitive-color-navy-900);
+  --button-navy-text: var(--primitive-color-neutral-0);
+  --button-navy-border: transparent;
+
+  /* —— Button — outline —— */
+  --button-outline-background: var(--primitive-color-neutral-0);
+  --button-outline-background-hover: var(--primitive-color-neutral-50);
+  --button-outline-background-active: var(--primitive-color-neutral-100);
+  --button-outline-text: var(--primitive-color-navy-950);
+  --button-outline-border: var(--primitive-color-neutral-200);
+
+  /* —— Button — subtle —— */
+  --button-subtle-background: var(--primitive-color-neutral-100);
+  --button-subtle-background-hover: var(--primitive-color-neutral-200);
+  --button-subtle-background-active: var(--primitive-color-neutral-300);
+  --button-subtle-text: var(--primitive-color-navy-900);
+  --button-subtle-border: transparent;
+
+  /* —— Button — ghost (text-only) —— */
+  --button-ghost-text: var(--primitive-color-navy-800);
+  --button-ghost-text-hover: var(--primitive-color-navy-950);
+  --button-ghost-background: transparent;
+  --button-ghost-background-hover: var(--primitive-color-neutral-100);
+
+  /* —— Button — emergency (high-urgency CTA; brand ramp) —— */
+  --button-emergency-background: var(--primitive-color-brand-600);
+  --button-emergency-background-hover: var(--primitive-color-brand-800);
+  --button-emergency-background-active: var(--primitive-color-brand-900);
+  --button-emergency-text: var(--primitive-color-neutral-0);
+  --button-emergency-border: transparent;
+
+  /* —— Button — destructive —— */
+  --button-destructive-background: var(--primitive-color-danger-600);
+  --button-destructive-background-hover: var(--primitive-color-danger-700);
+  --button-destructive-background-active: var(--primitive-color-danger-700);
+  --button-destructive-text: var(--primitive-color-neutral-0);
+  --button-destructive-border: transparent;
+
+  /* —— Button — warning (icon actions / caution) —— */
+  --button-warning-background: var(--primitive-color-warning-500);
+  --button-warning-background-hover: var(--primitive-color-warning-600);
+  --button-warning-background-active: var(--primitive-color-warning-700);
+  --button-warning-text: var(--primitive-color-neutral-950);
+  --button-warning-border: transparent;
+
+  /* —— Legacy danger alias → destructive —— */
+  --button-danger-background: var(--button-destructive-background);
+  --button-danger-background-hover: var(--button-destructive-background-hover);
+  --button-danger-text: var(--button-destructive-text);
+
+  /* —— Button — disabled (all intents) —— */
+  --button-disabled-background: var(--primitive-color-neutral-200);
+  --button-disabled-text: var(--primitive-color-neutral-400);
+  --button-disabled-border: var(--primitive-color-neutral-200);
+
+  /* —— Input —— */
+  --input-background: var(--primitive-color-neutral-0);
+  --input-border-default: var(--primitive-color-neutral-200);
+  --input-border-hover: var(--primitive-color-neutral-300);
+  --input-border-focus: var(--primitive-color-navy-600);
+  --input-placeholder-text: var(--primitive-color-neutral-400);
+  --input-text: var(--primitive-color-navy-950);
+  --input-shadow-focus: var(--primitive-elevation-focus-ring);
+
+  /* —— Status —— */
+  --status-success-bg: var(--primitive-color-success-50);
+  --status-success-text: var(--primitive-color-success-900);
+  --status-success-border: var(--primitive-color-success-200);
+  --status-success-icon: var(--primitive-color-success-500);
+
+  --status-warning-bg: var(--primitive-color-warning-50);
+  --status-warning-text: var(--primitive-color-warning-900);
+  --status-warning-border: var(--primitive-color-warning-200);
+  --status-warning-icon: var(--primitive-color-warning-500);
+
+  --status-danger-bg: var(--primitive-color-danger-50);
+  --status-danger-text: var(--primitive-color-danger-900);
+  --status-danger-border: var(--primitive-color-danger-200);
+  --status-danger-icon: var(--primitive-color-danger-500);
+
+  --status-info-bg: var(--primitive-color-info-50);
+  --status-info-text: var(--primitive-color-info-900);
+  --status-info-border: var(--primitive-color-info-200);
+  --status-info-icon: var(--primitive-color-info-500);
+
+  --status-critical-bg: var(--primitive-color-danger-100);
+  --status-critical-text: var(--primitive-color-danger-900);
+  --status-critical-border: var(--primitive-color-danger-300);
+
+  /* —— Elevation (semantic roles) —— */
+  --elevation-none: var(--primitive-elevation-none);
+  --elevation-rest: var(--primitive-elevation-xs);
+  --elevation-card: var(--primitive-elevation-sm);
+  --elevation-popover: var(--primitive-elevation-md);
+  --elevation-modal: var(--primitive-elevation-xl);
+
+  /* —— Radius (semantic roles) —— */
+  --radius-control: var(--primitive-radius-lg);
+  --radius-card: var(--primitive-radius-xl);
+  --radius-pill: var(--primitive-radius-full);
+
+  /* —— Semantic type roles —— */
+  --type-display-size: var(--primitive-font-size-5xl);
+  --type-display-leading: var(--primitive-line-height-5xl);
+  --type-display-weight: var(--primitive-font-weight-semibold);
+  --type-display-tracking: var(--primitive-letter-spacing-tight);
+
+  --type-title-size: var(--primitive-font-size-3xl);
+  --type-title-leading: var(--primitive-line-height-3xl);
+  --type-title-weight: var(--primitive-font-weight-semibold);
+  --type-title-tracking: var(--primitive-letter-spacing-tight);
+
+  --type-heading-size: var(--primitive-font-size-xl);
+  --type-heading-leading: var(--primitive-line-height-xl);
+  --type-heading-weight: var(--primitive-font-weight-semibold);
+
+  --type-body-size: var(--primitive-font-size-md);
+  --type-body-leading: var(--primitive-leading-relaxed);
+  --type-body-weight: var(--primitive-font-weight-regular);
+
+  --type-body-strong-size: var(--primitive-font-size-md);
+  --type-body-strong-leading: var(--primitive-leading-relaxed);
+  --type-body-strong-weight: var(--primitive-font-weight-semibold);
+
+  --type-caption-size: var(--primitive-font-size-xs);
+  --type-caption-leading: var(--primitive-line-height-xs);
+  --type-caption-weight: var(--primitive-font-weight-medium);
+
+  --type-label-size: var(--primitive-font-size-sm);
+  --type-label-leading: var(--primitive-line-height-sm);
+  --type-label-weight: var(--primitive-font-weight-medium);
+
+  /* —— Legacy page aliases —— */
+  --background: var(--background-default);
+  --primary: var(--button-primary-background);
+  --primary-dark: var(--button-primary-background-hover);
+  --navy: var(--primitive-color-navy-700);
+  --navy-dark: var(--primitive-color-navy-950);
+}

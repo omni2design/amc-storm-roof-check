@@ -1,0 +1,28 @@
+/**
+ * Focus ring (components can add `focus-ring` when native outline is suppressed).
+ * Uses semantic --focus-ring-shadow (light/dark aware).
+ */
+@utility focus-ring {
+  outline: 2px solid transparent;
+  outline-offset: 2px;
+  box-shadow: var(--focus-ring-shadow);
+}
+
+/**
+ * Field-focused ring (matches input token; use on custom inputs).
+ */
+@utility focus-ring-input {
+  outline: 2px solid transparent;
+  outline-offset: 2px;
+  box-shadow: var(--input-shadow-focus);
+}
+
+@utility state-loading {
+  opacity: var(--state-loading-opacity);
+  pointer-events: none;
+}
+
+@utility state-disabled {
+  opacity: var(--state-disabled-opacity);
+  pointer-events: none;
+}

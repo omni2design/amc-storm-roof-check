@@ -1,0 +1,13 @@
+/**
+ * Layer 1 — Radius primitives (Figma: corner radius)
+ */
+:root {
+  --primitive-radius-none: 0;
+  --primitive-radius-sm: 0.25rem; /* 4 */
+  --primitive-radius-md: 0.5rem; /* 8 */
+  --primitive-radius-lg: 0.75rem; /* 12 */
+  --primitive-radius-xl: 1rem; /* 16 */
+  --primitive-radius-2xl: 1.5rem; /* 24 */
+  --primitive-radius-3xl: 2rem; /* 32 */
+  --primitive-radius-full: 9999px;
+}

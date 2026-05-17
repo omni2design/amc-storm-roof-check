@@ -1,0 +1,77 @@
+/**
+ * Layer 3 — Product tokens: AMC Storm Roof Check (Figma: Product / roof-check)
+ * Compose semantic aliases only (no direct --primitive-*).
+ */
+:root,
+[data-theme="light"] {
+  /* Intake flow */
+  --roof-check-intake-progress-track: var(--chrome-progress-track);
+  --roof-check-intake-progress-fill: var(--button-emergency-background);
+
+  /* Urgency tiers */
+  --roof-check-urgency-critical-bg: var(--status-critical-bg);
+  --roof-check-urgency-critical-text: var(--status-critical-text);
+  --roof-check-urgency-critical-border: var(--status-critical-border);
+
+  --roof-check-urgency-high-bg: var(--status-danger-bg);
+  --roof-check-urgency-high-text: var(--status-danger-text);
+  --roof-check-urgency-high-border: var(--status-danger-border);
+
+  --roof-check-urgency-medium-bg: var(--status-warning-bg);
+  --roof-check-urgency-medium-text: var(--status-warning-text);
+  --roof-check-urgency-medium-border: var(--status-warning-border);
+
+  --roof-check-urgency-low-bg: var(--status-info-bg);
+  --roof-check-urgency-low-text: var(--status-info-text);
+  --roof-check-urgency-low-border: var(--status-info-border);
+
+  /* Photo / file upload */
+  --roof-check-upload-dropzone-bg: var(--background-subtle);
+  --roof-check-upload-dropzone-border: var(--border-default);
+  --roof-check-upload-dropzone-border-active: var(--border-strong);
+  --roof-check-upload-dropzone-border-error: var(--border-error);
+  --roof-check-upload-overlay: var(--background-overlay);
+  --roof-check-upload-progress-fill: var(--chrome-progress-indicator);
+  --roof-check-upload-progress-track: var(--chrome-progress-track);
+
+  /* Selection cards (issue type, budget, etc.) */
+  --roof-check-selection-card-bg: var(--surface-card);
+  --roof-check-selection-card-bg-hover: var(--surface-muted);
+  --roof-check-selection-card-bg-selected: var(--button-navy-background);
+  --roof-check-selection-card-border: var(--border-default);
+  --roof-check-selection-card-border-hover: var(--border-default);
+  --roof-check-selection-card-border-selected: var(--button-navy-background);
+  --roof-check-selection-card-icon-chip: var(--surface-muted);
+  --roof-check-selection-card-icon-chip-selected: var(--background-inverse);
+  --roof-check-selection-card-hover-bg: var(--background-subtle);
+  --roof-check-selection-card-bg-warning: var(--surface-warning);
+  --roof-check-selection-card-border-warning: var(--border-warning);
+  --roof-check-selection-card-text-warning: var(--text-on-warning);
+
+  /* Contractor / dashboard affordances */
+  --roof-check-contractor-note-bg: var(--surface-muted);
+  --roof-check-contractor-note-border: var(--border-subtle);
+
+  /* Emergency / storm messaging */
+  --roof-check-emergency-banner-bg: var(--background-emergency);
+  --roof-check-emergency-banner-text: var(--text-secondary);
+  --roof-check-emergency-banner-border: var(--status-critical-border);
+
+  /* Trust / rating micro-patterns */
+  --roof-check-rating-star: var(--status-warning-icon);
+}
+
+[data-theme="dark"] {
+  --roof-check-intake-progress-track: var(--background-muted);
+  --roof-check-intake-progress-fill: var(--button-emergency-background);
+
+  --roof-check-upload-progress-track: var(--chrome-progress-track);
+
+  --roof-check-selection-card-bg: var(--surface-card);
+  --roof-check-selection-card-bg-hover: var(--surface-raised);
+  --roof-check-selection-card-bg-selected: var(--surface-selected);
+
+  --roof-check-contractor-note-bg: var(--surface-muted);
+  --roof-check-emergency-banner-bg: var(--status-critical-bg);
+  --roof-check-emergency-banner-text: var(--status-critical-text);
+}

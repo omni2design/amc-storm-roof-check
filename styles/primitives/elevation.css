@@ -1,0 +1,21 @@
+/**
+ * Layer 1 — Shadow / elevation primitives (Figma: elevation)
+ * Uses rgba for predictable stacking on surfaces.
+ */
+:root {
+  --primitive-elevation-none: none;
+  --primitive-elevation-xs: 0 1px 2px 0 rgb(15 23 42 / 0.05);
+  --primitive-elevation-sm: 0 1px 3px 0 rgb(15 23 42 / 0.08), 0 1px 2px -1px rgb(15 23 42 / 0.08);
+  --primitive-elevation-md: 0 4px 6px -1px rgb(15 23 42 / 0.1), 0 2px 4px -2px rgb(15 23 42 / 0.08);
+  --primitive-elevation-lg: 0 10px 15px -3px rgb(15 23 42 / 0.1), 0 4px 6px -4px rgb(15 23 42 / 0.08);
+  --primitive-elevation-xl: 0 20px 25px -5px rgb(15 23 42 / 0.1), 0 8px 10px -6px rgb(15 23 42 / 0.08);
+  --primitive-elevation-2xl: 0 25px 50px -12px rgb(15 23 42 / 0.2);
+  --primitive-elevation-inner: inset 0 2px 4px 0 rgb(15 23 42 / 0.06);
+  --primitive-elevation-focus-ring: 0 0 0 3px rgb(31 58 95 / 0.35);
+  --primitive-elevation-focus-ring-info: 0 0 0 3px rgb(96 165 250 / 0.35);
+
+  /* Dark canvas — shadow stacks (theme uses via semantic elevation) */
+  --primitive-elevation-dark-sm: 0 1px 3px 0 rgb(0 0 0 / 0.35), 0 1px 2px -1px rgb(0 0 0 / 0.35);
+  --primitive-elevation-dark-md: 0 10px 25px -5px rgb(0 0 0 / 0.45);
+  --primitive-elevation-dark-xl: 0 25px 50px -12px rgb(0 0 0 / 0.55);
+}

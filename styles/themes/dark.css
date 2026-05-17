@@ -1,0 +1,166 @@
+/**
+ * Dark theme — Layer 2 overrides (Figma: Dark mode collection)
+ * Same semantic names as light; values remap only via primitives / semantic-safe refs.
+ */
+[data-theme="dark"] {
+  --background-default: var(--primitive-color-navy-950);
+  --background-subtle: var(--primitive-color-navy-900);
+  --background-muted: var(--primitive-color-navy-800);
+  --background-inverse: var(--primitive-color-neutral-0);
+  --background-overlay: var(--primitive-color-overlay-black-55);
+  --background-canvas: var(--primitive-color-navy-950);
+  --background-emergency: var(--primitive-color-danger-900);
+
+  --surface-default: var(--primitive-color-navy-900);
+  --surface-raised: var(--primitive-color-navy-800);
+  --surface-card: var(--primitive-color-navy-900);
+  --surface-muted: var(--primitive-color-navy-800);
+  --surface-inverse: var(--primitive-color-neutral-100);
+  --surface-selected: var(--primitive-color-navy-800);
+  --surface-disabled: var(--primitive-color-navy-800);
+  --surface-input: var(--primitive-color-navy-900);
+  --surface-warning: var(--primitive-color-warning-900);
+
+  --text-primary: var(--primitive-color-neutral-50);
+  --text-secondary: var(--primitive-color-neutral-300);
+  --text-muted: var(--primitive-color-neutral-400);
+  --text-inverse: var(--primitive-color-navy-950);
+  --text-link: var(--primitive-color-info-200);
+  --text-link-hover: var(--primitive-color-info-100);
+  --text-danger: var(--primitive-color-danger-200);
+  --text-success: var(--primitive-color-success-200);
+  --text-warning: var(--primitive-color-warning-200);
+  --text-disabled: var(--primitive-color-neutral-600);
+  --text-on-warning: var(--primitive-color-warning-100);
+
+  --icon-default: var(--primitive-color-neutral-300);
+  --icon-brand: var(--primitive-color-brand-400);
+  --icon-inverse: var(--primitive-color-navy-950);
+  --icon-subtle: var(--primitive-color-neutral-500);
+  --icon-disabled: var(--primitive-color-neutral-600);
+  --icon-urgent: var(--primitive-color-danger-400);
+  --icon-success: var(--primitive-color-success-400);
+  --icon-loading: var(--primitive-color-navy-300);
+  --icon-primary: var(--primitive-color-neutral-200);
+  --icon-secondary: var(--primitive-color-neutral-400);
+  --icon-muted: var(--primitive-color-neutral-500);
+  --icon-danger: var(--primitive-color-danger-400);
+  --icon-warning: var(--primitive-color-warning-400);
+
+  --border-default: var(--primitive-color-navy-700);
+  --border-subtle: var(--primitive-color-navy-800);
+  --border-strong: var(--primitive-color-neutral-200);
+  --border-focus: var(--primitive-color-info-400);
+  --border-error: var(--primitive-color-danger-400);
+  --border-divider: var(--primitive-color-navy-700);
+  --border-warning: var(--primitive-color-warning-700);
+
+  --focus-ring-shadow: var(--primitive-elevation-focus-ring-info);
+  --focus-ring-color: var(--primitive-color-info-400);
+
+  --chrome-progress-indicator: var(--primitive-color-navy-300);
+  --chrome-progress-track: var(--primitive-color-navy-700);
+
+  --button-primary-background: var(--primitive-color-brand-500);
+  --button-primary-background-hover: var(--primitive-color-brand-400);
+  --button-primary-background-active: var(--primitive-color-brand-300);
+  --button-primary-text: var(--primitive-color-navy-950);
+  --button-primary-border: transparent;
+
+  --button-secondary-background: var(--primitive-color-navy-800);
+  --button-secondary-background-hover: var(--primitive-color-navy-700);
+  --button-secondary-text: var(--primitive-color-neutral-50);
+  --button-secondary-border: var(--primitive-color-navy-600);
+
+  --button-navy-background: var(--primitive-color-navy-600);
+  --button-navy-background-hover: var(--primitive-color-navy-500);
+  --button-navy-background-active: var(--primitive-color-navy-700);
+  --button-navy-text: var(--primitive-color-neutral-0);
+  --button-navy-border: transparent;
+
+  --button-outline-background: var(--primitive-color-navy-900);
+  --button-outline-background-hover: var(--primitive-color-navy-800);
+  --button-outline-background-active: var(--primitive-color-navy-700);
+  --button-outline-text: var(--primitive-color-neutral-50);
+  --button-outline-border: var(--primitive-color-navy-600);
+
+  --button-subtle-background: var(--primitive-color-navy-800);
+  --button-subtle-background-hover: var(--primitive-color-navy-700);
+  --button-subtle-background-active: var(--primitive-color-navy-600);
+  --button-subtle-text: var(--primitive-color-neutral-100);
+  --button-subtle-border: transparent;
+
+  --button-ghost-text: var(--primitive-color-neutral-200);
+  --button-ghost-text-hover: var(--primitive-color-neutral-0);
+  --button-ghost-background: transparent;
+  --button-ghost-background-hover: var(--primitive-color-navy-800);
+
+  --button-emergency-background: var(--primitive-color-brand-500);
+  --button-emergency-background-hover: var(--primitive-color-brand-400);
+  --button-emergency-background-active: var(--primitive-color-brand-300);
+  --button-emergency-text: var(--primitive-color-navy-950);
+  --button-emergency-border: transparent;
+
+  --button-destructive-background: var(--primitive-color-danger-500);
+  --button-destructive-background-hover: var(--primitive-color-danger-400);
+  --button-destructive-background-active: var(--primitive-color-danger-300);
+  --button-destructive-text: var(--primitive-color-neutral-0);
+  --button-destructive-border: transparent;
+
+  --button-warning-background: var(--primitive-color-warning-500);
+  --button-warning-background-hover: var(--primitive-color-warning-400);
+  --button-warning-background-active: var(--primitive-color-warning-300);
+  --button-warning-text: var(--primitive-color-neutral-950);
+  --button-warning-border: transparent;
+
+  --button-danger-background: var(--button-destructive-background);
+  --button-danger-background-hover: var(--button-destructive-background-hover);
+  --button-danger-text: var(--button-destructive-text);
+
+  --button-disabled-background: var(--primitive-color-navy-800);
+  --button-disabled-text: var(--primitive-color-neutral-600);
+  --button-disabled-border: var(--primitive-color-navy-700);
+
+  --input-background: var(--primitive-color-navy-900);
+  --input-border-default: var(--primitive-color-navy-700);
+  --input-border-hover: var(--primitive-color-navy-600);
+  --input-border-focus: var(--primitive-color-info-400);
+  --input-placeholder-text: var(--primitive-color-neutral-500);
+  --input-text: var(--primitive-color-neutral-50);
+  --input-shadow-focus: var(--primitive-elevation-focus-ring-info);
+
+  --status-success-bg: var(--primitive-color-success-900);
+  --status-success-text: var(--primitive-color-success-100);
+  --status-success-border: var(--primitive-color-success-700);
+  --status-success-icon: var(--primitive-color-success-400);
+
+  --status-warning-bg: var(--primitive-color-warning-900);
+  --status-warning-text: var(--primitive-color-warning-100);
+  --status-warning-border: var(--primitive-color-warning-700);
+  --status-warning-icon: var(--primitive-color-warning-400);
+
+  --status-danger-bg: var(--primitive-color-danger-900);
+  --status-danger-text: var(--primitive-color-danger-100);
+  --status-danger-border: var(--primitive-color-danger-700);
+  --status-danger-icon: var(--primitive-color-danger-400);
+
+  --status-info-bg: var(--primitive-color-info-900);
+  --status-info-text: var(--primitive-color-info-100);
+  --status-info-border: var(--primitive-color-info-700);
+  --status-info-icon: var(--primitive-color-info-400);
+
+  --status-critical-bg: var(--primitive-color-danger-900);
+  --status-critical-text: var(--primitive-color-danger-100);
+  --status-critical-border: var(--primitive-color-danger-600);
+
+  --elevation-rest: var(--primitive-elevation-none);
+  --elevation-card: var(--primitive-elevation-dark-sm);
+  --elevation-popover: var(--primitive-elevation-dark-md);
+  --elevation-modal: var(--primitive-elevation-dark-xl);
+
+  --background: var(--background-default);
+  --primary: var(--button-primary-background);
+  --primary-dark: var(--button-primary-background-hover);
+  --navy: var(--primitive-color-navy-400);
+  --navy-dark: var(--primitive-color-neutral-100);
+}

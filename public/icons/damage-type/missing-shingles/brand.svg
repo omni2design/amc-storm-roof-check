@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none"><g transform="translate(12 12) scale(0.8039) translate(-16 -16)"><path
+    d="M25.333 3.25C27.22 3.25 28.75 4.78002 28.75 6.66699V25.333C28.75 27.22 27.22 28.75 25.333 28.75H6.66699C4.78002 28.75 3.25 27.22 3.25 25.333V6.66699C3.25 4.78002 4.78002 3.25 6.66699 3.25H25.333ZM4.75 20.75V25.333C4.75 26.3916 5.60845 27.25 6.66699 27.25H20.583V20.75H4.75ZM22.083 20.75V27.25H25.333C26.3916 27.25 27.25 26.3916 27.25 25.333V20.75H22.083ZM6.66699 4.75C5.60845 4.75 4.75 5.60845 4.75 6.66699V19.25H15.25V12C15.25 11.5858 15.5858 11.25 16 11.25C16.4142 11.25 16.75 11.5858 16.75 12V19.25H27.25V6.66699C27.25 5.60845 26.3916 4.75 25.333 4.75H22.083V12C22.083 12.4142 21.7472 12.75 21.333 12.75C20.9189 12.7498 20.583 12.4141 20.583 12V4.75H6.66699Z"
+    fill="currentColor"
+  />
+  <path d="M4 12H28" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+  <path d="M10.6666 20V28" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+  <path d="M10.6666 4V12" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+  <rect x="17.5975" y="13.5834" width="8.83333" height="4.83333" stroke="currentColor" stroke-width="0.5" />
+  <rect x="12.25" y="21.5834" width="7.5" height="4.83333" stroke="currentColor" stroke-width="0.5" />
+  <path
+    d="M6.33752 5.58337H9.08752V10.4164H5.58752V6.33337L5.59143 6.25623C5.63005 5.87826 5.94936 5.58337 6.33752 5.58337Z"
+    stroke="currentColor"
+    stroke-width="0.5"
+  /></g></svg>

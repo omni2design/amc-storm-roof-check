@@ -1,0 +1,72 @@
+/**
+ * Mobile homeowner flow — fluid width 320px–460px (Figma reference 390px).
+ */
+@utility flow-mobile-width {
+  width: 100%;
+  max-width: 28.75rem; /* 460px */
+  margin-inline: auto;
+}
+
+@utility flow-mobile-inset-x {
+  padding-inline: 1.5rem; /* 24px — px-6 */
+}
+
+@utility flow-hero-pt {
+  padding-top: 7.5rem; /* 120px — extra hero breathing room */
+}
+
+/** Scrollable page body below fixed TopNav */
+@utility flow-page-body {
+  padding-top: 5.25rem; /* 84px */
+  padding-bottom: 7.5rem; /* 120px */
+}
+
+/** Intake steps — nav clearance + 24px gap below progress/divider to page header */
+@utility flow-intake-page-body {
+  padding-top: calc(5.25rem + 1.5rem); /* 84px nav + 24px header gap */
+  padding-bottom: max(10.75rem, calc(10.75rem + env(safe-area-inset-bottom, 0px))); /* ~172px — dual-CTA footer */
+}
+
+/** Result page — dual-CTA footer + 24px scroll end gap above fixed BottomCTA */
+@utility flow-result-page-body {
+  padding-top: calc(5.25rem + 1.5rem); /* 84px nav + 24px header gap */
+  padding-bottom: max(calc(10.75rem + 1.5rem), calc(10.75rem + 1.5rem + env(safe-area-inset-bottom, 0px))); /* footer ~172px + 24px gap */
+}
+
+/** @deprecated — use flow-page-body on content regions */
+@utility flow-intake-content {
+  padding-top: 5.25rem;
+  padding-bottom: 7.5rem;
+}
+
+@utility flow-intake-footer {
+  padding-inline: 1.5rem;
+  padding-top: 1.25rem; /* 20px */
+  padding-bottom: max(1.75rem, env(safe-area-inset-bottom, 0px)); /* 28px + safe area */
+}
+
+/** Full-screen modal / bottom-sheet overlay — above flow-fixed-footer (sticky) */
+@utility flow-modal-overlay {
+  z-index: var(--primitive-z-modal);
+}
+
+@utility flow-fixed-nav {
+  position: fixed;
+  top: 0;
+  left: 50%;
+  z-index: var(--primitive-z-sticky);
+  width: 100%;
+  max-width: 28.75rem; /* 460px */
+  transform: translateX(-50%);
+}
+
+/** Fixed bottom CTA bar — same 460px cap as TopNav until responsive breakpoints */
+@utility flow-fixed-footer {
+  position: fixed;
+  bottom: 0;
+  left: 50%;
+  z-index: var(--primitive-z-sticky);
+  width: 100%;
+  max-width: 28.75rem; /* 460px */
+  transform: translateX(-50%);
+}

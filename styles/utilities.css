@@ -1,0 +1,11 @@
+/**
+ * Design utilities barrel — imported after Tailwind in app/globals.css
+ */
+@import "./utilities/spacing.css";
+@import "./utilities/typography.css";
+@import "./utilities/radius.css";
+@import "./utilities/elevation.css";
+@import "./utilities/motion.css";
+@import "./utilities/focus-loading.css";
+@import "./utilities/interaction.css";
+@import "./utilities/mobile-flow.css";

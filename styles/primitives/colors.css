@@ -1,0 +1,90 @@
+/**
+ * Layer 1 — Brand & system color primitives (Figma: Brand primitives)
+ * Theme-independent ramps. Semantic/product layers reference these only.
+ */
+:root {
+  /* Brand (AMC red family) */
+  --primitive-color-brand-50: #fef2f2;
+  --primitive-color-brand-100: #fee2e2;
+  --primitive-color-brand-200: #fecaca;
+  --primitive-color-brand-300: #fca5a5;
+  --primitive-color-brand-400: #f87171;
+  --primitive-color-brand-500: #e54848;
+  --primitive-color-brand-600: #b22e2e;
+  --primitive-color-brand-700: #9f2626;
+  --primitive-color-brand-800: #8f2424;
+  --primitive-color-brand-900: #6b1c1c;
+  --primitive-color-brand-950: #450a0a;
+  --primitive-color-brand-light-gray: #f5f5f5;
+
+  /* Navy (AMC secondary / structure) */
+  --primitive-color-navy-50: #f4f7fb;
+  --primitive-color-navy-100: #e3eaf4;
+  --primitive-color-navy-200: #c7d5e8;
+  --primitive-color-navy-300: #9bb4d1;
+  --primitive-color-navy-400: #5f86ae;
+  --primitive-color-navy-500: #3d648f;
+  --primitive-color-navy-600: #2f5078;
+  --primitive-color-navy-700: #1f3a5f;
+  --primitive-color-navy-800: #142a45;
+  --primitive-color-navy-900: #0f2136;
+  --primitive-color-navy-950: #0b1f33;
+
+  /* Neutral (cool gray UI chrome) */
+  --primitive-color-neutral-0: #ffffff;
+  --primitive-color-neutral-50: #f9fafb;
+  --primitive-color-neutral-100: #f3f4f6;
+  --primitive-color-neutral-200: #e5e7eb;
+  --primitive-color-neutral-300: #d1d5db;
+  --primitive-color-neutral-400: #9ca3af;
+  --primitive-color-neutral-500: #6b7280;
+  --primitive-color-neutral-600: #4b5563;
+  --primitive-color-neutral-700: #374151;
+  --primitive-color-neutral-800: #1f2937;
+  --primitive-color-neutral-900: #111827;
+  --primitive-color-neutral-950: #030712;
+
+  /* Status — success */
+  --primitive-color-success-50: #ecfdf5;
+  --primitive-color-success-100: #d1fae5;
+  --primitive-color-success-200: #a7f3d0;
+  --primitive-color-success-300: #6ee7b7;
+  --primitive-color-success-400: #34d399;
+  --primitive-color-success-500: #10b981;
+  --primitive-color-success-600: #059669;
+  --primitive-color-success-700: #047857;
+  --primitive-color-success-900: #064e3b;
+
+  /* Status — warning */
+  --primitive-color-warning-50: #fffbeb;
+  --primitive-color-warning-100: #fef3c7;
+  --primitive-color-warning-200: #fde68a;
+  --primitive-color-warning-300: #fcd34d;
+  --primitive-color-warning-400: #fbbf24;
+  --primitive-color-warning-500: #f59e0b;
+  --primitive-color-warning-600: #d97706;
+  --primitive-color-warning-700: #b45309;
+  --primitive-color-warning-900: #78350f;
+
+  /* Status — danger / critical */
+  --primitive-color-danger-50: #fef2f2;
+  --primitive-color-danger-100: #fee2e2;
+  --primitive-color-danger-200: #fecaca;
+  --primitive-color-danger-300: #fca5a5;
+  --primitive-color-danger-400: #f87171;
+  --primitive-color-danger-500: #ef4444;
+  --primitive-color-danger-600: #dc2626;
+  --primitive-color-danger-700: #b91c1c;
+  --primitive-color-danger-900: #7f1d1d;
+
+  /* Status — info */
+  --primitive-color-info-50: #eff6ff;
+  --primitive-color-info-100: #dbeafe;
+  --primitive-color-info-200: #bfdbfe;
+  --primitive-color-info-300: #93c5fd;
+  --primitive-color-info-400: #60a5fa;
+  --primitive-color-info-500: #3b82f6;
+  --primitive-color-info-600: #2563eb;
+  --primitive-color-info-700: #1d4ed8;
+  --primitive-color-info-900: #1e3a8a;
+}
