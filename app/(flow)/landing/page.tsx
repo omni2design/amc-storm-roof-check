@@ -24,7 +24,7 @@ export default function LandingPage() {
           <div className="absolute inset-0 bg-button-navy/50" />
         </div>
 
-        <div className="relative z-10 flex min-h-[50rem] flex-col gap-6 px-6 pb-8 pt-[7.5rem]">
+        <div className="relative z-10 flex min-h-[50rem] flex-col gap-6 px-6 pb-8 pt-[108px]">
           <div className="flex w-full items-start gap-[11px]">
             <AmcLogo variant="landing-cover" className="shrink-0" />
             <div className="flex min-w-0 flex-1 flex-col items-start justify-center self-stretch">

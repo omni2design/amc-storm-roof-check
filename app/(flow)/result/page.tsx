@@ -1,15 +1,13 @@
 "use client";
 
 import { useCallback, useRef, useState } from "react";
-import Link from "next/link";
 import { FlowShell } from "@/components/layout/FlowShell";
 import { TopNav } from "@/components/foundation/TopNav";
 import { Button } from "@/components/foundation/Button";
 import { NextdoorLogo } from "@/components/brand/NextdoorLogo";
 import { CallHenrySheet } from "@/components/product/roof-check/CallHenrySheet";
 import { Icon } from "@/components/icons/Icon";
-import { buttonVariants } from "@/lib/variants/button";
-import { cn } from "@/lib/utils/cn";
+import { useRestartRoofCheck } from "@/lib/flow/useRestartRoofCheck";
 import { useRoofCheckStore } from "@/lib/flow/useRoofCheckStore";
 
 function SummaryRow({ label, value }: { label: string; value?: string }) {
@@ -22,7 +20,8 @@ function SummaryRow({ label, value }: { label: string; value?: string }) {
 }
 
 export default function ResultPage() {
-  const { data, reset } = useRoofCheckStore();
+  const { data } = useRoofCheckStore();
+  const restartFlow = useRestartRoofCheck();
   const [callSheetOpen, setCallSheetOpen] = useState(false);
   const callHenryTriggerRef = useRef<HTMLButtonElement>(null);
 
@@ -49,16 +48,15 @@ export default function ResultPage() {
           >
             Call Henry Now
           </Button>
-          <Link
-            href="/landing"
-            onClick={() => reset()}
-            className={cn(
-              buttonVariants({ intent: "ghost", size: "lg" }),
-              "w-full px-6 py-4 font-normal text-body text-foreground-secondary hover:bg-transparent hover:text-foreground-primary",
-            )}
+          <Button
+            type="button"
+            intent="ghost"
+            size="lg"
+            className="w-full px-6 py-4 font-normal text-body text-foreground-secondary hover:bg-transparent hover:text-foreground-primary"
+            onClick={restartFlow}
           >
             Start a new check
-          </Link>
+          </Button>
         </div>
       }
     >

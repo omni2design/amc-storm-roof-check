@@ -101,7 +101,10 @@ function setState(partial: Partial<RoofCheckData>) {
 }
 
 function resetState() {
-  state = { ...defaultData, photos: [] };
+  state = { photos: [] };
+  if (isBrowser()) {
+    window.localStorage.removeItem(STORAGE_KEY);
+  }
   saveToStorage(state);
   emit();
 }

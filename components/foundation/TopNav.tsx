@@ -9,6 +9,7 @@ import { NavBackIcon } from "@/components/brand/NavBackIcon";
 import { ProgressBar } from "@/components/foundation/ProgressBar";
 import { useFlowTransitionScope } from "@/components/layout/FlowTransitionProvider";
 import { PRE_FLOW_ROUTES } from "@/lib/flow/flowRoutes";
+import { useRestartRoofCheck } from "@/lib/flow/useRestartRoofCheck";
 
 export type TopNavProps = {
   onBack?: () => void;
@@ -29,6 +30,7 @@ export function TopNav({
   variant = "progress",
 }: TopNavProps) {
   const inFlowScope = useFlowTransitionScope();
+  const restartFlow = useRestartRoofCheck();
   const [mounted, setMounted] = useState(false);
 
   useEffect(() => {
@@ -79,8 +81,12 @@ export function TopNav({
           )}
           <Link
             href={PRE_FLOW_ROUTES.landing}
-            aria-label="Go to landing page"
+            aria-label="Go to landing page and start over"
             className="flex size-8 shrink-0 items-center justify-center rounded-lg focus-visible:focus-ring"
+            onClick={(event) => {
+              event.preventDefault();
+              restartFlow();
+            }}
           >
             <TopNavLogo />
           </Link>
