@@ -1,12 +1,19 @@
 "use client";
 
-import { useCallback, useSyncExternalStore } from "react";
+import { useCallback, useEffect, useSyncExternalStore } from "react";
 import { compressImageFile } from "@/lib/utils/compress-image";
 
 export type RoofCheckPhoto = {
   id: string;
   dataUrl: string;
   name: string;
+  note?: string;
+};
+
+export type RoofCheckPhotoInput = {
+  dataUrl: string;
+  name: string;
+  note?: string;
 };
 
 export type RoofCheckData = {
@@ -25,13 +32,14 @@ export type RoofCheckData = {
 };
 
 const STORAGE_KEY = "amc_roof_check_v1";
-const MAX_PHOTOS = 8;
+export const MAX_ROOF_CHECK_PHOTOS = 8;
 
 const defaultData: RoofCheckData = {
   photos: [],
 };
 
 let state: RoofCheckData = defaultData;
+let storeHydrated = false;
 const listeners = new Set<() => void>();
 
 function emit() {
@@ -73,8 +81,9 @@ function saveToStorage(next: RoofCheckData) {
   }
 }
 
-function ensureHydrated() {
-  if (!isBrowser()) return;
+function hydrateStore() {
+  if (!isBrowser() || storeHydrated) return;
+  storeHydrated = true;
   if (state === defaultData) {
     state = loadFromStorage();
   }
@@ -86,8 +95,11 @@ function subscribe(cb: () => void) {
 }
 
 function getSnapshot() {
-  ensureHydrated();
   return state;
+}
+
+function getServerSnapshot() {
+  return defaultData;
 }
 
 function setState(partial: Partial<RoofCheckData>) {
@@ -110,7 +122,15 @@ function resetState() {
 }
 
 export function useRoofCheckStore() {
-  const data = useSyncExternalStore(subscribe, getSnapshot, () => defaultData);
+  const data = useSyncExternalStore(subscribe, getSnapshot, getServerSnapshot);
+
+  useEffect(() => {
+    const snapshotBeforeHydrate = state;
+    hydrateStore();
+    if (state !== snapshotBeforeHydrate) {
+      emit();
+    }
+  }, []);
 
   const setField = useCallback(
     <K extends keyof RoofCheckData>(key: K, value: RoofCheckData[K]) => {
@@ -119,9 +139,23 @@ export function useRoofCheckStore() {
     [],
   );
 
+  const addPhoto = useCallback((input: RoofCheckPhotoInput) => {
+    if (state.photos.length >= MAX_ROOF_CHECK_PHOTOS) return false;
+
+    const trimmedNote = input.note?.trim();
+    const entry: RoofCheckPhoto = {
+      id: `${Date.now()}-${Math.random().toString(36).slice(2, 9)}`,
+      dataUrl: input.dataUrl,
+      name: input.name,
+      ...(trimmedNote ? { note: trimmedNote } : {}),
+    };
+    setState({ photos: [...state.photos, entry] });
+    return true;
+  }, []);
+
   const addPhotos = useCallback(async (files: FileList | File[]) => {
     const list = Array.from(files);
-    const remaining = MAX_PHOTOS - state.photos.length;
+    const remaining = MAX_ROOF_CHECK_PHOTOS - state.photos.length;
     if (remaining <= 0) return;
 
     const toAdd: RoofCheckPhoto[] = [];
@@ -143,11 +177,25 @@ export function useRoofCheckStore() {
     }
   }, []);
 
+  const updatePhotoNote = useCallback((id: string, note?: string) => {
+    const trimmedNote = note?.trim();
+    setState({
+      photos: state.photos.map((photo) => {
+        if (photo.id !== id) return photo;
+        if (!trimmedNote) {
+          const { note: _removed, ...rest } = photo;
+          return rest;
+        }
+        return { ...photo, note: trimmedNote };
+      }),
+    });
+  }, []);
+
   const removePhoto = useCallback((id: string) => {
     setState({ photos: state.photos.filter((p) => p.id !== id) });
   }, []);
 
   const reset = useCallback(() => resetState(), []);
 
-  return { data, setField, addPhotos, removePhoto, reset };
+  return { data, setField, addPhoto, addPhotos, updatePhotoNote, removePhoto, reset };
 }
