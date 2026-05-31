@@ -180,6 +180,21 @@
   --status-critical-text: var(--primitive-color-danger-900);
   --status-critical-border: var(--primitive-color-danger-300);
 
+  /* Contractor workflow aliases (map to status ramps) */
+  --status-scheduled-bg: var(--status-success-bg);
+  --status-scheduled-text: var(--status-success-text);
+  --status-scheduled-border: var(--status-success-border);
+  --status-scheduled-icon: var(--status-success-icon);
+
+  --status-confirmed-bg: var(--status-info-bg);
+  --status-confirmed-text: var(--status-info-text);
+  --status-confirmed-border: var(--status-info-border);
+  --status-confirmed-icon: var(--status-info-icon);
+
+  --status-muted-bg: var(--surface-muted);
+  --status-muted-text: var(--text-muted);
+  --status-muted-border: var(--border-subtle);
+
   /* —— Elevation (semantic roles) —— */
   --elevation-none: var(--primitive-elevation-none);
   --elevation-rest: var(--primitive-elevation-xs);

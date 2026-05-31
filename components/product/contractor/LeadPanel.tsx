@@ -1,6 +1,8 @@
 import type { ReactNode } from "react";
 import { cn } from "@/lib/utils/cn";
 import { StatusBadge } from "@/components/foundation/StatusBadge";
+import { CardShell } from "@/components/foundation/CardShell";
+import type { StatusBadgeStatus } from "@/lib/contractor/types";
 
 export type LeadPanelSection = {
   id: string;
@@ -11,7 +13,7 @@ export type LeadPanelSection = {
 export type LeadPanelProps = {
   title: string;
   subtitle?: string;
-  status?: "critical" | "high" | "medium" | "low" | "optional";
+  status?: StatusBadgeStatus;
   statusLabel?: string;
   sections: LeadPanelSection[];
   actions?: ReactNode;
@@ -47,13 +49,10 @@ export function LeadPanel({
           {sections
             .filter((s) => s.id !== "sidebar")
             .map((section) => (
-              <section
-                key={section.id}
-                className="rounded-card border border-border-default bg-surface-card p-5 shadow-semantic-rest"
-              >
+              <CardShell key={section.id} as="section" padding="lg">
                 <h2 className="text-heading text-foreground-primary">{section.title}</h2>
                 <div className="mt-4">{section.children}</div>
-              </section>
+              </CardShell>
             ))}
         </div>
 
@@ -62,13 +61,10 @@ export function LeadPanel({
             {sections
               .filter((s) => s.id === "sidebar")
               .map((section) => (
-                <section
-                  key={section.id}
-                  className="rounded-card border border-border-default bg-surface-card p-5 shadow-semantic-rest"
-                >
+                <CardShell key={section.id} as="section" padding="lg">
                   <h2 className="text-heading text-foreground-primary">{section.title}</h2>
                   <div className="mt-4">{section.children}</div>
-                </section>
+                </CardShell>
               ))}
           </aside>
         ) : null}

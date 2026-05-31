@@ -209,6 +209,39 @@
   --color-status-critical-bg: var(--status-critical-bg);
   --color-status-critical-text: var(--status-critical-text);
   --color-status-critical-border: var(--status-critical-border);
+  --color-status-scheduled-bg: var(--status-scheduled-bg);
+  --color-status-scheduled-text: var(--status-scheduled-text);
+  --color-status-scheduled-border: var(--status-scheduled-border);
+  --color-status-confirmed-bg: var(--status-confirmed-bg);
+  --color-status-confirmed-text: var(--status-confirmed-text);
+  --color-status-confirmed-border: var(--status-confirmed-border);
+  --color-status-muted-bg: var(--status-muted-bg);
+  --color-status-muted-text: var(--status-muted-text);
+  --color-status-muted-border: var(--status-muted-border);
+
+  /* Contractor product */
+  --color-contractor-nav-bg: var(--contractor-nav-background);
+  --color-contractor-nav-border: var(--contractor-nav-border);
+  --color-contractor-nav-active: var(--contractor-nav-active);
+  --color-contractor-nav-inactive: var(--contractor-nav-inactive);
+  --color-contractor-lead-card-bg: var(--contractor-lead-card-bg);
+  --color-contractor-lead-card-border: var(--contractor-lead-card-border);
+  --color-contractor-filter-pill-bg: var(--contractor-filter-pill-bg);
+  --color-contractor-filter-pill-bg-selected: var(--contractor-filter-pill-bg-selected);
+  --color-contractor-filter-pill-text: var(--contractor-filter-pill-text);
+  --color-contractor-filter-pill-text-selected: var(--contractor-filter-pill-text-selected);
+  --color-contractor-ai-insight-bg: var(--contractor-ai-insight-bg);
+  --color-contractor-ai-insight-border: var(--contractor-ai-insight-border);
+  --color-contractor-ai-insight-text: var(--contractor-ai-insight-text);
+  --color-contractor-recommendation-bg: var(--contractor-recommendation-bg);
+  --color-contractor-recommendation-border: var(--contractor-recommendation-border);
+  --color-contractor-recommendation-text: var(--contractor-recommendation-text);
+  --color-contractor-notes-bg: var(--contractor-notes-bg);
+  --color-contractor-notes-border: var(--contractor-notes-border);
+  --color-contractor-calendar-cell-bg-today: var(--contractor-calendar-cell-bg-today);
+  --color-contractor-calendar-cell-border-today: var(--contractor-calendar-cell-border-today);
+  --color-contractor-settings-item-bg: var(--contractor-settings-item-bg);
+  --color-contractor-settings-divider: var(--contractor-settings-divider);
 
   --color-input-bg: var(--input-background);
   --color-input-border: var(--input-border-default);

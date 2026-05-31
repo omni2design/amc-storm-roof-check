@@ -1,7 +1,8 @@
 import { cva, type VariantProps } from "class-variance-authority";
 
 /**
- * Status pill — Figma `Status Badge` (Critical, High, Medium, Low, Optional).
+ * Status pill — Figma `Status Badge` (Critical, High, Medium, Low, Optional)
+ * + Contractor workflow: Scheduled, Confirmed, Muted.
  */
 export const statusBadgeVariants = cva(
   [
@@ -16,6 +17,11 @@ export const statusBadgeVariants = cva(
         medium: "border-border-warning bg-status-warning-bg text-status-warning-text",
         low: "border-border-status-info bg-status-info-bg text-status-info-text",
         optional: "border-border-subtle bg-surface-muted text-foreground-muted",
+        scheduled:
+          "border-border-status-success bg-status-scheduled-bg text-status-scheduled-text",
+        confirmed:
+          "border-border-status-info bg-status-confirmed-bg text-status-confirmed-text",
+        muted: "border-border-subtle bg-status-muted-bg text-status-muted-text",
       },
     },
     defaultVariants: {

@@ -1,0 +1,95 @@
+/**
+ * Layer 3 — Product tokens: Contractor Portal (Figma: 04.2 Contractor)
+ * Compose semantic aliases only (no direct --primitive-*).
+ */
+:root,
+[data-theme="light"] {
+  /* Shell / navigation */
+  --contractor-nav-background: var(--surface-card);
+  --contractor-nav-border: var(--border-default);
+  --contractor-nav-active: var(--text-brand);
+  --contractor-nav-inactive: var(--text-muted);
+  --contractor-nav-badge: var(--button-primary-background);
+
+  /* Lead cards & lists */
+  --contractor-lead-card-bg: var(--surface-card);
+  --contractor-lead-card-border: var(--border-default);
+  --contractor-lead-card-border-selected: var(--border-strong);
+  --contractor-lead-card-bg-hover: var(--surface-muted);
+  --contractor-lead-card-bg-selected: var(--surface-selected);
+
+  /* Filter pills */
+  --contractor-filter-pill-bg: var(--surface-muted);
+  --contractor-filter-pill-bg-selected: var(--surface-inverse);
+  --contractor-filter-pill-text: var(--text-secondary);
+  --contractor-filter-pill-text-selected: var(--text-inverse);
+  --contractor-filter-pill-border: var(--border-subtle);
+  --contractor-filter-pill-border-selected: transparent;
+
+  /* Search */
+  --contractor-search-bg: var(--surface-input);
+  --contractor-search-border: var(--input-border-default);
+  --contractor-search-border-focus: var(--input-border-focus);
+  --contractor-search-placeholder: var(--input-placeholder-text);
+
+  /* AI / insight cards */
+  --contractor-ai-insight-bg: var(--status-info-bg);
+  --contractor-ai-insight-border: var(--status-info-border);
+  --contractor-ai-insight-text: var(--status-info-text);
+  --contractor-ai-insight-icon: var(--status-info-icon);
+
+  --contractor-recommendation-bg: var(--status-success-bg);
+  --contractor-recommendation-border: var(--status-success-border);
+  --contractor-recommendation-text: var(--status-success-text);
+  --contractor-recommendation-icon: var(--status-success-icon);
+
+  /* Notes */
+  --contractor-notes-bg: var(--surface-muted);
+  --contractor-notes-border: var(--border-subtle);
+  --contractor-notes-focus-border: var(--border-focus);
+
+  /* Photo viewer */
+  --contractor-photo-viewer-bg: var(--background-inverse);
+  --contractor-photo-overlay-bg: var(--background-overlay);
+  --contractor-photo-info-bg: rgb(15 33 54 / 0.72);
+  --contractor-photo-marker-bg: var(--button-primary-background);
+  --contractor-photo-marker-ring: var(--primitive-color-neutral-0);
+
+  /* Pipeline */
+  --contractor-pipeline-track: var(--border-subtle);
+  --contractor-pipeline-stage-active: var(--button-navy-background);
+  --contractor-pipeline-stage-complete: var(--status-success-icon);
+  --contractor-pipeline-stage-inactive: var(--text-muted);
+
+  /* Calendar */
+  --contractor-calendar-bg: var(--background-default);
+  --contractor-calendar-header-bg: var(--surface-card);
+  --contractor-calendar-cell-bg: var(--surface-card);
+  --contractor-calendar-cell-bg-muted: var(--background-subtle);
+  --contractor-calendar-cell-bg-selected: var(--surface-selected);
+  --contractor-calendar-cell-bg-today: var(--status-info-bg);
+  --contractor-calendar-cell-border-today: var(--status-info-border);
+  --contractor-calendar-cell-text-muted: var(--text-muted);
+  --contractor-calendar-event-bg: var(--surface-selected);
+  --contractor-calendar-event-border: var(--border-default);
+  --contractor-calendar-event-inspection-bg: var(--status-success-bg);
+  --contractor-calendar-event-inspection-border: var(--status-success-border);
+  --contractor-calendar-event-urgent-bg: var(--status-warning-bg);
+  --contractor-calendar-event-urgent-border: var(--status-warning-border);
+
+  /* Profile / settings */
+  --contractor-profile-header-bg: var(--surface-card);
+  --contractor-settings-item-bg: var(--surface-card);
+  --contractor-settings-item-bg-hover: var(--surface-muted);
+  --contractor-settings-divider: var(--border-subtle);
+
+  /* Quick actions */
+  --contractor-quick-action-bg: var(--surface-card);
+  --contractor-quick-action-border: var(--border-default);
+}
+
+[data-theme="dark"] {
+  --contractor-photo-info-bg: rgb(0 0 0 / 0.72);
+  --contractor-filter-pill-bg-selected: var(--button-navy-background);
+  --contractor-calendar-cell-bg-today: var(--status-info-bg);
+}

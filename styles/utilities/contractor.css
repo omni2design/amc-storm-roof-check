@@ -1,0 +1,38 @@
+/**
+ * Contractor portal — mobile-first layout helpers (460px cap, fixed chrome).
+ */
+@utility contractor-mobile-width {
+  width: 100%;
+  max-width: 28.75rem; /* 460px */
+  margin-inline: auto;
+}
+
+@utility contractor-fixed-top {
+  position: fixed;
+  top: 0;
+  left: 50%;
+  z-index: var(--primitive-z-sticky);
+  width: 100%;
+  max-width: 28.75rem;
+  transform: translateX(-50%);
+}
+
+@utility contractor-fixed-bottom {
+  position: fixed;
+  bottom: 0;
+  left: 50%;
+  z-index: var(--primitive-z-sticky);
+  width: 100%;
+  max-width: 28.75rem;
+  transform: translateX(-50%);
+}
+
+/** Scrollable body below top nav + above bottom nav */
+@utility contractor-page-body {
+  padding-top: calc(3.75rem + env(safe-area-inset-top, 0px)); /* ~60px top nav */
+  padding-bottom: max(calc(4.5rem + env(safe-area-inset-bottom, 0px)), 4.5rem); /* ~72px bottom nav */
+}
+
+@utility contractor-inset-x {
+  padding-inline: var(--primitive-space-4);
+}

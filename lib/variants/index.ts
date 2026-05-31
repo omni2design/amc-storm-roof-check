@@ -8,3 +8,7 @@ export { uploadCardVariants, type UploadCardVariantProps } from "./upload-card";
 export { textFieldVariants, type TextFieldVariantProps } from "./text-field";
 export { iconColorVariants, type IconColorVariantProps } from "./icon";
 export { textareaVariants, type TextareaVariantProps } from "./textarea";
+export { filterPillVariants, type FilterPillVariantProps } from "./filter-pill";
+export { searchBarVariants, type SearchBarVariantProps } from "./search-bar";
+export { avatarVariants, type AvatarVariantProps } from "./avatar";
+export { cardShellVariants, type CardShellVariantProps } from "./card-shell";
