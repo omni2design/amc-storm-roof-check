@@ -1,69 +1,74 @@
 import { cn } from "@/lib/utils/cn";
-import { CardShell } from "@/components/foundation/CardShell";
-import { StatusBadge } from "@/components/foundation/StatusBadge";
-import { MetadataRow } from "@/components/foundation/MetadataRow";
-import { Icon } from "@/components/icons/Icon";
+import { ContractorStatusBadge } from "@/components/product/contractor/ContractorStatusBadge";
+import { mapLeadStatusToContractorBadge } from "@/lib/contractor/map-status-badge";
 import type { LeadWorkflowStatus } from "@/lib/contractor/types";
 
 export type ContractorLeadDetailSummaryProps = {
   name: string;
-  address: string;
-  phone?: string;
-  email?: string;
   status: LeadWorkflowStatus;
   statusLabel: string;
-  submittedAt: string;
-  issue: string;
-  urgencyLabel?: string;
+  detailSubtitle: string;
+  alertMessage: string;
+  photoCount: number;
+  insurancePill?: string;
+  budgetPill?: string;
   className?: string;
 };
 
-/** Figma `Contractor Lead Detail Summary` — hero summary block on lead detail. */
+/** Figma `Contractor/Lead Detail Summary` (829:8088) */
 export function ContractorLeadDetailSummary({
   name,
-  address,
-  phone,
-  email,
   status,
   statusLabel,
-  submittedAt,
-  issue,
-  urgencyLabel,
+  detailSubtitle,
+  alertMessage,
+  photoCount,
+  insurancePill,
+  budgetPill,
   className,
 }: ContractorLeadDetailSummaryProps) {
+  const pills = [
+    photoCount > 0 ? `${photoCount} Photos` : null,
+    insurancePill,
+    budgetPill,
+  ].filter(Boolean) as string[];
+
   return (
-    <CardShell className={cn("flex flex-col gap-4", className)} padding="lg">
-      <div className="flex flex-wrap items-start justify-between gap-3">
-        <div className="flex min-w-0 flex-col gap-1">
-          <h2 className="text-heading text-foreground-primary">{name}</h2>
-          <p className="text-sm-leading text-foreground-secondary">{issue}</p>
+    <article
+      className={cn(
+        "flex w-full flex-col gap-3 rounded-[12px] border border-[#fca5a5] bg-white p-4",
+        className,
+      )}
+    >
+      <div className="flex w-full items-start justify-between gap-3">
+        <div className="flex min-w-0 flex-1 flex-col gap-[3px]">
+          <h1 className="truncate text-lg font-semibold leading-relaxed text-[#111827]">{name}</h1>
+          <p className="text-xs leading-tight tracking-[0.03px] text-[#6b7280]">{detailSubtitle}</p>
         </div>
-        <StatusBadge status={status}>{statusLabel}</StatusBadge>
+        <ContractorStatusBadge status={mapLeadStatusToContractorBadge(status)} className="shrink-0">
+          {statusLabel}
+        </ContractorStatusBadge>
       </div>
 
-      <dl className="grid gap-3">
-        <MetadataRow
-          label="Address"
-          value={address}
-          icon={<Icon name="contact/location" mode="subtle" size="sm" />}
-        />
-        {phone ? (
-          <MetadataRow
-            label="Phone"
-            value={phone}
-            icon={<Icon name="contact/phone" mode="subtle" size="sm" />}
-          />
-        ) : null}
-        {email ? (
-          <MetadataRow
-            label="Email"
-            value={email}
-            icon={<Icon name="contact/email" mode="subtle" size="sm" />}
-          />
-        ) : null}
-        <MetadataRow label="Submitted" value={submittedAt} />
-        {urgencyLabel ? <MetadataRow label="Urgency" value={urgencyLabel} /> : null}
-      </dl>
-    </CardShell>
+      <div className="flex w-full overflow-hidden rounded-lg bg-[#fef2f2]">
+        <div className="w-1 shrink-0 self-stretch bg-button-primary" aria-hidden />
+        <p className="flex-1 py-3 pl-2.5 pr-3.5 text-sm font-semibold leading-tight text-[#991b1b]">
+          {alertMessage}
+        </p>
+      </div>
+
+      {pills.length > 0 ? (
+        <div className="flex flex-wrap gap-2">
+          {pills.map((pill) => (
+            <span
+              key={pill}
+              className="rounded-2xl bg-[#f3f4f6] px-3 py-1 text-xs leading-tight tracking-[0.03px] text-[#374151]"
+            >
+              {pill}
+            </span>
+          ))}
+        </div>
+      ) : null}
+    </article>
   );
 }

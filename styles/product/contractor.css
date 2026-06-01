@@ -7,7 +7,7 @@
   /* Shell / navigation */
   --contractor-nav-background: var(--surface-card);
   --contractor-nav-border: var(--border-default);
-  --contractor-nav-active: var(--text-brand);
+  --contractor-nav-active: var(--text-urgent);
   --contractor-nav-inactive: var(--text-muted);
   --contractor-nav-badge: var(--button-primary-background);
 
@@ -27,7 +27,7 @@
   --contractor-filter-pill-border-selected: transparent;
 
   /* Search */
-  --contractor-search-bg: var(--surface-input);
+  --contractor-search-bg: var(--primitive-color-neutral-0);
   --contractor-search-border: var(--input-border-default);
   --contractor-search-border-focus: var(--input-border-focus);
   --contractor-search-placeholder: var(--input-placeholder-text);
@@ -86,6 +86,35 @@
   /* Quick actions */
   --contractor-quick-action-bg: var(--surface-card);
   --contractor-quick-action-border: var(--border-default);
+
+  /* Status Badge — Figma Contractor/Status Badge (216:21) */
+  --contractor-badge-critical-bg: var(--status-danger-bg);
+  --contractor-badge-critical-text: var(--primitive-color-danger-800);
+  --contractor-badge-critical-dot: var(--feedback-danger);
+
+  --contractor-badge-high-priority-bg: var(--status-warning-bg);
+  --contractor-badge-high-priority-text: var(--primitive-color-warning-800);
+  --contractor-badge-high-priority-dot: var(--feedback-warning);
+
+  --contractor-badge-needs-inspection-bg: var(--status-info-bg);
+  --contractor-badge-needs-inspection-text: var(--primitive-color-info-800);
+  --contractor-badge-needs-inspection-dot: var(--primitive-color-info-500);
+
+  --contractor-badge-scheduled-bg: var(--status-success-bg);
+  --contractor-badge-scheduled-text: var(--primitive-color-success-800);
+  --contractor-badge-scheduled-dot: var(--feedback-success);
+
+  --contractor-badge-contacted-bg: var(--primitive-color-purple-50);
+  --contractor-badge-contacted-text: var(--primitive-color-purple-800);
+  --contractor-badge-contacted-dot: var(--primitive-color-purple-800);
+
+  --contractor-badge-new-bg: var(--primitive-color-sky-50);
+  --contractor-badge-new-text: var(--primitive-color-sky-800);
+  --contractor-badge-new-dot: var(--primitive-color-sky-800);
+
+  --contractor-badge-neutral-bg: var(--surface-muted);
+  --contractor-badge-neutral-text: var(--text-secondary);
+  --contractor-badge-neutral-dot: var(--text-secondary);
 }
 
 [data-theme="dark"] {

@@ -1,6 +1,5 @@
 import { cn } from "@/lib/utils/cn";
-import { CardShell } from "@/components/foundation/CardShell";
-import { SectionHeader } from "@/components/foundation/SectionHeader";
+import { LEAD_DETAIL_CARD_CLASS } from "@/components/product/contractor/LeadDetailPageLayout";
 
 export type ContractorPhotoItem = {
   id: string;
@@ -11,44 +10,46 @@ export type ContractorPhotoItem = {
 
 export type ContractorPhotoGalleryCardProps = {
   photos: ContractorPhotoItem[];
-  title?: string;
   onPhotoClick?: (photo: ContractorPhotoItem) => void;
   className?: string;
 };
 
-/** Figma `Contractor Photo Gallery Card` — thumbnail grid for lead photos. */
+/** Figma `Contractor/Photo Gallery Card` (829:8093) */
 export function ContractorPhotoGalleryCard({
   photos,
-  title = "Photos",
   onPhotoClick,
   className,
 }: ContractorPhotoGalleryCardProps) {
   return (
-    <CardShell className={cn("flex flex-col gap-4", className)} padding="md">
-      <SectionHeader title={title} subtitle={`${photos.length} uploaded`} size="sm" />
+    <article className={cn(LEAD_DETAIL_CARD_CLASS, "flex flex-col gap-2 p-4", className)}>
+      <p className="text-[10px] font-semibold leading-[1.4] tracking-[0.05px] text-[#9ca3af]">
+        UPLOADED PHOTOS
+      </p>
       {photos.length === 0 ? (
-        <p className="text-sm-leading text-foreground-muted">No photos uploaded yet.</p>
+        <p className="text-sm text-[#9ca3af]">No photos uploaded yet.</p>
       ) : (
-        <ul className="grid grid-cols-3 gap-2">
-          {photos.map((photo) => (
-            <li key={photo.id}>
+        <div className="flex h-[90px] w-full gap-2">
+          {photos.map((photo, index) => (
+            <div key={photo.id} className="flex min-w-0 flex-1 flex-col gap-1">
               <button
                 type="button"
                 onClick={() => onPhotoClick?.(photo)}
-                className="group relative aspect-square w-full overflow-hidden rounded-control border border-border-default bg-background-subtle focus-visible:focus-ring"
+                className="h-[70px] w-full overflow-hidden rounded-md focus-visible:focus-ring"
               >
                 {/* eslint-disable-next-line @next/next/no-img-element */}
-                <img src={photo.src} alt={photo.alt ?? photo.label ?? "Lead photo"} className="size-full object-cover" />
-                {photo.label ? (
-                  <span className="absolute inset-x-0 bottom-0 bg-contractor-photo-info-bg px-2 py-1 text-caption text-foreground-inverse opacity-0 motion-safe transition-opacity group-hover:opacity-100">
-                    {photo.label}
-                  </span>
-                ) : null}
+                <img
+                  src={photo.src}
+                  alt={photo.alt ?? photo.label ?? "Lead photo"}
+                  className="size-full object-cover"
+                />
               </button>
-            </li>
+              <p className="text-[9px] leading-none text-[#9ca3af]">
+                {photo.label ?? `Photo ${index + 1}`}
+              </p>
+            </div>
           ))}
-        </ul>
+        </div>
       )}
-    </CardShell>
+    </article>
   );
 }

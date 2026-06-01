@@ -6,6 +6,7 @@ export type StatusBadgeProps = React.HTMLAttributes<HTMLSpanElement> &
     live?: boolean;
   };
 
+/** Figma foundation `Status Badge` — homeowner urgency tiers (bordered pill). */
 export function StatusBadge({ className, status, live, children, ...props }: StatusBadgeProps) {
   return (
     <span

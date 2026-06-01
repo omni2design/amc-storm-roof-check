@@ -5,7 +5,13 @@ import type { StatusBadgeVariantProps } from "@/lib/variants/status-badge";
 export type LeadPriority = "critical" | "high" | "medium" | "low" | "optional";
 
 /** Contractor workflow status badges. */
-export type LeadWorkflowStatus = LeadPriority | "scheduled" | "confirmed" | "muted";
+export type LeadWorkflowStatus =
+  | LeadPriority
+  | "needsInspection"
+  | "scheduled"
+  | "confirmed"
+  | "completed"
+  | "muted";
 
 export type ContractorNavItem = "leads" | "pipeline" | "calendar" | "profile";
 
@@ -17,7 +23,7 @@ export type PipelineStageId =
   | "won"
   | "lost";
 
-export type CalendarViewMode = "month" | "week" | "tomorrow";
+export type CalendarViewMode = "today" | "tomorrow" | "week";
 
 export type CalendarEventVariant = "default" | "inspection" | "urgent";
 
@@ -28,6 +34,31 @@ export type PhotoAnnotation = {
   label?: string;
 };
 
+export type PhotoAiObservationState = "possible" | "visible" | "needsReview";
+
+export type PhotoAiObservation = {
+  id: string;
+  label: string;
+  state: PhotoAiObservationState;
+};
+
+/** Reported-issue card overlaid on the main photo (Figma 04.01). */
+export type LeadReportedIssueOverlay = {
+  eyebrow: string;
+  title: string;
+  subtitle: string;
+  severityLabel: string;
+};
+
+export type LeadQuickActionIcon = "call" | "message" | "schedule" | "contact";
+
+export type LeadIntakeSummary = {
+  dateSubmitted: string;
+  damageType: string;
+  priority: string;
+  intakeStatus: string;
+};
+
 export type BusinessHoursDay = {
   day: string;
   open: string;
@@ -35,12 +66,26 @@ export type BusinessHoursDay = {
   closed?: boolean;
 };
 
+export type ProfileQuickActionIcon = "help" | "team" | "settings" | "notifications" | "billing";
+
+export type ProfileQuickAction = {
+  id: string;
+  label: string;
+  description: string;
+  icon: ProfileQuickActionIcon;
+  href?: string;
+  onClick?: () => void;
+  destructive?: boolean;
+};
+
+/** @deprecated Legacy grouped settings — profile uses `ProfileQuickAction` + flat list. */
 export type ContractorSettingsSection = {
   id: string;
   title?: string;
   items: ContractorSettingsItemData[];
 };
 
+/** @deprecated Legacy settings row data shape. */
 export type ContractorSettingsItemData = {
   id: string;
   label: string;

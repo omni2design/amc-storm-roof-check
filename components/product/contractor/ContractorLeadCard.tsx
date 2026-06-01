@@ -1,63 +1,104 @@
 import Link from "next/link";
 import { cn } from "@/lib/utils/cn";
-import { StatusBadge } from "@/components/foundation/StatusBadge";
-import { Avatar } from "@/components/foundation/Avatar";
+import { ContractorStatusBadge } from "@/components/product/contractor/ContractorStatusBadge";
+import { mapLeadStatusToContractorBadge } from "@/lib/contractor/map-status-badge";
+import { mapContractorBadgeToAccentClass } from "@/lib/contractor/map-lead-accent";
 import type { LeadWorkflowStatus } from "@/lib/contractor/types";
 
 export type ContractorLeadCardProps = {
   id: string;
   name: string;
   issue: string;
-  location: string;
   submittedAt: string;
   status: LeadWorkflowStatus;
   statusLabel: string;
   photoCount?: number;
+  insurance?: string;
+  budget?: string;
+  unread?: boolean;
   href?: string;
   selected?: boolean;
   onClick?: () => void;
+  /** Figma pipeline view — top row only, no meta footer. */
+  variant?: "full" | "compact";
   className?: string;
 };
 
-/** Figma `Contractor Lead Card` — inbox list item for leads view. */
+function MetaColumn({ label, value }: { label: string; value: string }) {
+  return (
+    <div className="flex min-w-0 flex-col gap-0.5">
+      <p className="text-[9px] font-semibold tracking-[0.5px] text-foreground-muted uppercase">{label}</p>
+      <p className="truncate text-[13px] font-semibold text-foreground-primary">{value}</p>
+    </div>
+  );
+}
+
+/** Figma `Contractor/Lead Card` (829:8077) — inbox list item for leads view. */
 export function ContractorLeadCard({
   name,
   issue,
-  location,
   submittedAt,
   status,
   statusLabel,
   photoCount,
+  insurance,
+  budget,
+  unread = true,
   href,
   selected = false,
   onClick,
+  variant = "full",
   className,
 }: ContractorLeadCardProps) {
+  const badgeStatus = mapLeadStatusToContractorBadge(status);
+  const accentClass = mapContractorBadgeToAccentClass(badgeStatus);
+
+  const photosLabel =
+    typeof photoCount === "number" ? `${photoCount} photo${photoCount === 1 ? "" : "s"}` : "—";
+
   const content = (
     <>
-      <div className="flex items-start gap-3">
-        <Avatar name={name} size="md" />
-        <div className="flex min-w-0 flex-1 flex-col gap-1">
-          <div className="flex flex-wrap items-center gap-2">
-            <p className="truncate text-body-strong text-foreground-primary">{name}</p>
-            <StatusBadge status={status}>{statusLabel}</StatusBadge>
+      <div aria-hidden className={cn("w-1 shrink-0 self-stretch", accentClass)} />
+      <div className="flex min-w-0 flex-1 flex-col gap-3 p-4">
+        <div className="flex gap-2">
+          <div className="flex min-w-0 flex-1 flex-col gap-1">
+            <div className="flex items-center gap-1.5">
+              {unread ? (
+                <span
+                  className={cn("size-[7px] shrink-0 rounded-pill", accentClass)}
+                  aria-hidden
+                />
+              ) : null}
+              <p className="truncate text-[15px] font-semibold leading-none text-foreground-primary">
+                {name}
+              </p>
+            </div>
+            <p className="truncate text-[13px] leading-normal text-foreground-secondary">{issue}</p>
           </div>
-          <p className="truncate text-sm-leading text-foreground-secondary">{issue}</p>
-          <div className="flex flex-wrap items-center gap-x-3 gap-y-1 text-caption text-foreground-muted">
-            <span>{location}</span>
-            <span>{submittedAt}</span>
-            {typeof photoCount === "number" ? <span>{photoCount} photos</span> : null}
+          <div className="flex shrink-0 flex-col items-end gap-1.5">
+            <ContractorStatusBadge status={badgeStatus}>{statusLabel}</ContractorStatusBadge>
+            <p className="text-[11px] leading-none text-foreground-muted">{submittedAt}</p>
           </div>
         </div>
+        {variant === "full" ? (
+          <>
+            <div className="h-px w-full bg-surface-muted" role="separator" />
+            <div className="grid w-full grid-cols-3 gap-2">
+              <MetaColumn label="Photos" value={photosLabel} />
+              <MetaColumn label="Insurance" value={insurance ?? "—"} />
+              <MetaColumn label="Budget" value={budget ?? "—"} />
+            </div>
+          </>
+        ) : null}
       </div>
     </>
   );
 
   const cardClass = cn(
-    "block w-full rounded-card border p-4 text-left motion-safe transition-colors focus-visible:focus-ring",
+    "flex w-full overflow-hidden rounded-xl border text-left shadow-[0_2px_8px_rgb(0_0_0/0.07)] motion-safe transition-colors focus-visible:focus-ring",
     selected
-      ? "border-contractor-lead-card-border-selected bg-contractor-lead-card-bg-selected shadow-semantic-card"
-      : "border-contractor-lead-card-border bg-contractor-lead-card-bg shadow-semantic-rest hover:bg-contractor-lead-card-bg-hover",
+      ? "border-contractor-lead-card-border-selected bg-contractor-lead-card-bg-selected"
+      : "border-contractor-lead-card-border bg-contractor-lead-card-bg hover:bg-contractor-lead-card-bg-hover",
     className,
   );
 

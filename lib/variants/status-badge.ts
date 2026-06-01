@@ -1,8 +1,7 @@
 import { cva, type VariantProps } from "class-variance-authority";
 
 /**
- * Status pill — Figma `Status Badge` (Critical, High, Medium, Low, Optional)
- * + Contractor workflow: Scheduled, Confirmed, Muted.
+ * Homeowner status pill — Figma foundation `Status Badge` (Critical, High, Medium, Low, Optional)
  */
 export const statusBadgeVariants = cva(
   [

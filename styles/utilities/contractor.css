@@ -27,12 +27,68 @@
   transform: translateX(-50%);
 }
 
-/** Scrollable body below top nav + above bottom nav */
+/** Figma BottomCTA — fixed above 90px bottom nav */
+@utility contractor-fixed-above-bottom-nav {
+  position: fixed;
+  bottom: calc(5.625rem + env(safe-area-inset-bottom, 0px));
+  left: 50%;
+  z-index: var(--primitive-z-sticky);
+  width: 100%;
+  max-width: 28.75rem;
+  transform: translateX(-50%);
+}
+
+/** Contractor shell chrome + content inset (24px gap below top nav / above bottom chrome). */
+@utility contractor-shell-main {
+  padding-top: calc(5rem + var(--primitive-space-6) + env(safe-area-inset-top, 0px));
+  padding-inline: var(--primitive-space-6);
+}
+
+/** 90px bottom nav + 24px content gap */
+@utility contractor-shell-main--bottom-nav {
+  padding-bottom: calc(5.625rem + var(--primitive-space-6) + env(safe-area-inset-bottom, 0px));
+}
+
+/** 90px quick action bar + 24px content gap (lead detail) */
+@utility contractor-shell-main--quick-actions {
+  padding-bottom: calc(5.625rem + var(--primitive-space-6) + env(safe-area-inset-bottom, 0px));
+}
+
+/** 88px bottom CTA + 90px bottom nav + 24px content gap (schedule, profile) */
+@utility contractor-shell-main--cta-and-nav {
+  padding-bottom: calc(
+    5.5rem + 5.625rem + var(--primitive-space-6) + env(safe-area-inset-bottom, 0px)
+  );
+}
+
+/** Content-only bottom inset when no fixed footer chrome */
+@utility contractor-shell-main--content-only {
+  padding-bottom: calc(var(--primitive-space-6) + env(safe-area-inset-bottom, 0px));
+}
+
+/** @deprecated Use `contractor-shell-main` + footer variant utilities on `<main>`. */
 @utility contractor-page-body {
-  padding-top: calc(3.75rem + env(safe-area-inset-top, 0px)); /* ~60px top nav */
-  padding-bottom: max(calc(4.5rem + env(safe-area-inset-bottom, 0px)), 4.5rem); /* ~72px bottom nav */
+  padding-top: calc(5rem + var(--primitive-space-6) + env(safe-area-inset-top, 0px));
+  padding-bottom: calc(5.625rem + var(--primitive-space-6) + env(safe-area-inset-bottom, 0px));
+  padding-inline: var(--primitive-space-6);
 }
 
 @utility contractor-inset-x {
-  padding-inline: var(--primitive-space-4);
+  padding-inline: var(--primitive-space-6);
+}
+
+/** Figma Contractor/Status Badge (216:21) — explicit sizing so CVA/Tailwind cannot drop styles */
+@utility contractor-status-badge {
+  display: inline-flex;
+  max-width: 100%;
+  align-items: center;
+  gap: 4px;
+  border-radius: var(--radius-pill);
+  padding-block: 4px;
+  padding-inline: 8px;
+  white-space: nowrap;
+  font-size: 10px;
+  line-height: 1.4;
+  font-weight: 700;
+  letter-spacing: 0.05px;
 }

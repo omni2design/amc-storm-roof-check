@@ -22,7 +22,7 @@
 
   body {
     min-height: 100%;
-    font-family: var(--primitive-font-family-sans);
+    font-family: var(--font-inter, var(--primitive-font-family-sans));
     background-color: var(--background-default);
     color: var(--text-primary);
     -webkit-font-smoothing: antialiased;

@@ -1,14 +1,25 @@
-import Image from "next/image";
 import Link from "next/link";
+import Image from "next/image";
 import { AmcLogo } from "@/components/brand/AmcLogo";
+import { HeaderAction } from "@/components/foundation/HeaderAction";
 import { TrustSignalCard } from "@/components/product/roof-check/TrustSignalCard";
 import { buttonVariants } from "@/lib/variants/button";
+import { CONTRACTOR_ROUTES } from "@/lib/contractor/routes";
 import { cn } from "@/lib/utils/cn";
 
 export default function LandingPage() {
   return (
     <main className="relative min-h-dvh w-full overflow-hidden bg-background-subtle">
       <div className="flow-mobile-width relative mx-auto min-h-dvh w-full overflow-hidden">
+        <HeaderAction
+          href={CONTRACTOR_ROUTES.demo}
+          contractorEntrySource="landing"
+          aria-label="Contractor preview"
+          className="absolute right-6 top-6 z-30"
+        >
+          Contractor Preview
+        </HeaderAction>
+
         <div className="absolute inset-0 overflow-hidden" aria-hidden>
           {/* Figma BG_RoofingRepairImage — aspect 4032/3024, top -196.61px, bottom 0, left calc(50% - 20px) */}
           <div className="absolute bottom-0 left-[calc(50%-1.25rem)] top-[-12.29rem] aspect-[4032/3024] min-w-full w-auto -translate-x-1/2">
@@ -26,7 +37,7 @@ export default function LandingPage() {
 
         <div className="relative z-10 flex min-h-[50rem] flex-col gap-6 px-6 pb-8 pt-[108px]">
           <div className="flex w-full items-start gap-[11px]">
-            <AmcLogo variant="landing-cover" className="shrink-0" />
+            <AmcLogo variant="lg-no-text-sq" className="shrink-0" />
             <div className="flex min-w-0 flex-1 flex-col items-start justify-center self-stretch">
               <p className="w-full text-lg font-semibold leading-7 text-foreground-inverse drop-shadow-[0_4px_4px_rgba(0,0,0,0.25)]">
                 ALL MIGHT CONTRACTING
@@ -44,7 +55,7 @@ export default function LandingPage() {
           </h1>
         </div>
 
-        <section className="absolute inset-x-0 bottom-0 z-20 flex flex-col gap-8 rounded-t-[2rem] bg-surface-card px-6 py-8 shadow-[0_-4px_4px_rgba(17,24,39,0.1)]">
+        <section className="absolute inset-x-0 bottom-0 z-20 flex flex-col gap-8 rounded-t-[2rem] bg-surface-card px-6 pt-8 pb-6 shadow-[0_-4px_4px_rgba(17,24,39,0.1)]">
           <p className="text-center text-base leading-normal text-foreground-brand">
             Upload photos and get honest guidance from All Might Contracting.
           </p>

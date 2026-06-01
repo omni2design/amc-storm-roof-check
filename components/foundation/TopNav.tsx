@@ -73,7 +73,7 @@ export function TopNav({
             <span className="size-8" aria-hidden />
           )}
           {showProgress ? (
-            <p className="text-center text-2xs-leading tracking-[0.05px] text-foreground-secondary">
+            <p className="text-center text-xs-leading tracking-[0.05px] text-foreground-secondary">
               Step {currentStep} of {totalSteps}
             </p>
           ) : (

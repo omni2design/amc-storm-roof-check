@@ -53,6 +53,7 @@
   --primitive-color-success-500: #10b981;
   --primitive-color-success-600: #059669;
   --primitive-color-success-700: #047857;
+  --primitive-color-success-800: #166534;
   --primitive-color-success-900: #064e3b;
 
   /* Status — warning */
@@ -64,6 +65,7 @@
   --primitive-color-warning-500: #f59e0b;
   --primitive-color-warning-600: #d97706;
   --primitive-color-warning-700: #b45309;
+  --primitive-color-warning-800: #92400e;
   --primitive-color-warning-900: #78350f;
 
   /* Status — danger / critical */
@@ -75,6 +77,7 @@
   --primitive-color-danger-500: #ef4444;
   --primitive-color-danger-600: #dc2626;
   --primitive-color-danger-700: #b91c1c;
+  --primitive-color-danger-800: #991b1b;
   --primitive-color-danger-900: #7f1d1d;
 
   /* Status — info */
@@ -86,5 +89,12 @@
   --primitive-color-info-500: #3b82f6;
   --primitive-color-info-600: #2563eb;
   --primitive-color-info-700: #1d4ed8;
+  --primitive-color-info-800: #1e40af;
   --primitive-color-info-900: #1e3a8a;
+
+  /* Accent ramps — contractor status badge (Figma 216:21) */
+  --primitive-color-purple-50: #faf5ff;
+  --primitive-color-purple-800: #6b21a8;
+  --primitive-color-sky-50: #f0f9ff;
+  --primitive-color-sky-800: #075985;
 }

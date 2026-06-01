@@ -5,7 +5,7 @@ import {
 } from "@/lib/brand/amc-logo-variants";
 
 export type AmcLogoProps = {
-  /** Figma size variant — `sm-default` nav (32px), `landing-cover` hero (64px) */
+  /** Figma Foundation/Brand Logo (295:4191) — `sm-default` nav, `sm-no-text-sq` contractor nav, `lg-no-text-sq` landing hero */
   variant?: AmcLogoVariant;
   className?: string;
 };

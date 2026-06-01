@@ -1,8 +1,9 @@
 /** Figma `AMC Logo` (295:4191) — layer insets per size variant */
 export type AmcLogoVariant =
   | "sm-default"
+  | "sm-no-text-sq"
+  | "lg-no-text-sq"
   | "md-landing"
-  | "landing-cover"
   | "submitting-loading";
 
 export type AmcLogoLayer = {
@@ -46,17 +47,24 @@ export const amcLogoVariants: Record<AmcLogoVariant, AmcLogoVariantConfig> = {
     bgClass: "bg-surface-muted",
     layers: defaultLayers("/brand/amc-logo/sm-default"),
   },
+  /** Figma Foundation/Brand Logo `no-text-sq` sm (504:6463) — contractor top nav (829:8189) */
+  "sm-no-text-sq": {
+    type: "asset",
+    sizePx: 32,
+    src: "/brand/amc-logo/no-text-sq-sm.svg",
+  },
+  /** Figma Foundation/Brand Logo `no-text-sq` lg — landing hero (829:8105) */
+  "lg-no-text-sq": {
+    type: "asset",
+    sizePx: 64,
+    src: "/brand/amc-logo/no-text-sq-lg.svg",
+  },
   "md-landing": {
     type: "layers",
     sizePx: 64,
     roundedClass: "rounded-2xl",
     bgClass: "bg-surface-card",
     layers: defaultLayers("/brand/amc-logo/md-landing"),
-  },
-  "landing-cover": {
-    type: "asset",
-    sizePx: 64,
-    src: "/brand/amc-logo/landing-cover-logo.svg",
   },
   "submitting-loading": {
     type: "loading",

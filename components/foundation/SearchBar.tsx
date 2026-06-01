@@ -4,29 +4,14 @@ import { searchBarVariants, type SearchBarVariantProps } from "@/lib/variants/se
 
 function SearchIcon({ className }: { className?: string }) {
   return (
-    <svg
-      className={className}
-      width="20"
-      height="20"
-      viewBox="0 0 20 20"
-      fill="none"
+    <img
+      src="/icons/action/search.svg"
+      alt=""
+      width={24}
+      height={24}
+      className={cn("size-6 shrink-0", className)}
       aria-hidden
-    >
-      <path
-        d="M9 16A7 7 0 1 0 9 2a7 7 0 0 0 0 14Z"
-        stroke="currentColor"
-        strokeWidth="1.5"
-        strokeLinecap="round"
-        strokeLinejoin="round"
-      />
-      <path
-        d="M17 17l-3.5-3.5"
-        stroke="currentColor"
-        strokeWidth="1.5"
-        strokeLinecap="round"
-        strokeLinejoin="round"
-      />
-    </svg>
+    />
   );
 }
 
@@ -56,7 +41,7 @@ export const SearchBar = forwardRef<HTMLInputElement, SearchBarProps>(
 
     return (
       <div className={cn(searchBarVariants({ state: resolvedState }), wrapperClassName)}>
-        <SearchIcon className="size-5 shrink-0 text-icon-subtle" />
+        <SearchIcon className="shrink-0" />
         <input
           ref={ref}
           type="search"

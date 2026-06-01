@@ -1,9 +1,13 @@
 import Link from "next/link";
 import { cn } from "@/lib/utils/cn";
+import { NavigationBackIcon } from "@/components/foundation/icons/NavigationBackIcon";
+import { ContractorProfileActionIcon } from "@/components/product/contractor/ContractorProfileActionIcon";
+import type { ProfileQuickActionIcon } from "@/lib/contractor/types";
 
 export type ContractorSettingsItemProps = {
   label: string;
   description?: string;
+  icon?: ProfileQuickActionIcon;
   href?: string;
   onClick?: () => void;
   trailing?: React.ReactNode;
@@ -11,10 +15,12 @@ export type ContractorSettingsItemProps = {
   className?: string;
 };
 
-/** Figma `Contractor Settings Item` — single row in profile settings list. */
+
+/** Figma settings list row — icon tile, title, subtitle, chevron. */
 export function ContractorSettingsItem({
   label,
   description,
+  icon,
   href,
   onClick,
   trailing,
@@ -23,27 +29,28 @@ export function ContractorSettingsItem({
 }: ContractorSettingsItemProps) {
   const content = (
     <>
-      <div className="flex min-w-0 flex-1 flex-col gap-0.5 text-left">
+      {icon ? <ContractorProfileActionIcon icon={icon} /> : null}
+      <div className="flex min-w-0 flex-1 flex-col gap-px">
         <span
           className={cn(
-            "text-sm-leading font-medium",
+            "text-sm font-semibold leading-tight",
             destructive ? "text-foreground-danger" : "text-foreground-primary",
           )}
         >
           {label}
         </span>
-        {description ? <span className="text-caption text-foreground-secondary">{description}</span> : null}
+        {description ? (
+          <span className="text-[10px] font-normal leading-[1.4] tracking-[0.05px] text-foreground-muted">
+            {description}
+          </span>
+        ) : null}
       </div>
-      {trailing ?? (
-        <svg width="16" height="16" viewBox="0 0 16 16" fill="none" className="shrink-0 text-icon-subtle" aria-hidden>
-          <path d="M6 3l5 5-5 5" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
-        </svg>
-      )}
+      {trailing ?? <NavigationBackIcon position="right" />}
     </>
   );
 
   const rowClass = cn(
-    "flex w-full items-center gap-3 px-4 py-3 text-left motion-safe transition-colors hover:bg-contractor-settings-item-bg-hover focus-visible:focus-ring",
+    "flex w-full items-center gap-3 overflow-hidden p-4 text-left motion-safe transition-colors hover:bg-[#f9fafb] focus-visible:focus-ring",
     className,
   );
 

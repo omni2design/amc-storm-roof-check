@@ -39,6 +39,7 @@
   --text-disabled: var(--primitive-color-neutral-400);
   --text-on-warning: var(--primitive-color-warning-900);
   --text-brand: var(--primitive-color-navy-700);
+  --text-urgent: var(--primitive-color-brand-600);
 
   /* —— Icon modes (Figma: Category + Mode) —— */
   --icon-default: var(--primitive-color-neutral-600);
@@ -161,6 +162,11 @@
   --status-success-border: var(--primitive-color-success-200);
   --status-success-icon: var(--primitive-color-success-500);
 
+  /* Figma feedback aliases (dots, indicators) */
+  --feedback-success: var(--primitive-color-success-500);
+  --feedback-danger: var(--primitive-color-danger-500);
+  --feedback-warning: var(--primitive-color-warning-500);
+
   --status-warning-bg: var(--primitive-color-warning-50);
   --status-warning-text: var(--primitive-color-warning-900);
   --status-warning-border: var(--primitive-color-warning-200);
@@ -182,7 +188,7 @@
 
   /* Contractor workflow aliases (map to status ramps) */
   --status-scheduled-bg: var(--status-success-bg);
-  --status-scheduled-text: var(--status-success-text);
+  --status-scheduled-text: var(--primitive-color-success-700);
   --status-scheduled-border: var(--status-success-border);
   --status-scheduled-icon: var(--status-success-icon);
 

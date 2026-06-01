@@ -1,41 +1,30 @@
 import { cn } from "@/lib/utils/cn";
-import { CardShell } from "@/components/foundation/CardShell";
-import { SectionHeader } from "@/components/foundation/SectionHeader";
+import { SETTINGS_LIST_CLASS } from "@/components/product/contractor/ProfilePageLayout";
 import { ContractorSettingsItem } from "./ContractorSettingsItem";
-import type { ContractorSettingsSection } from "@/lib/contractor/types";
+import type { ProfileQuickAction } from "@/lib/contractor/types";
 
 export type ContractorSettingsListProps = {
-  sections: ContractorSettingsSection[];
+  items: ProfileQuickAction[];
   className?: string;
 };
 
-/** Figma `Contractor Settings List` — grouped settings sections on profile screen. */
-export function ContractorSettingsList({ sections, className }: ContractorSettingsListProps) {
+/** Figma `Contractor/Settings List` (801:4037) — Quick Actions on profile screen. */
+export function ContractorSettingsList({ items, className }: ContractorSettingsListProps) {
   return (
-    <div className={cn("flex flex-col gap-4", className)}>
-      {sections.map((section) => (
-        <CardShell key={section.id} padding="none" variant="flat" className="overflow-hidden">
-          {section.title ? (
-            <div className="border-b border-contractor-settings-divider px-4 py-3">
-              <SectionHeader title={section.title} size="sm" />
-            </div>
-          ) : null}
-          <ul className="divide-y divide-contractor-settings-divider">
-            {section.items.map((item) => (
-              <li key={item.id}>
-                <ContractorSettingsItem
-                  label={item.label}
-                  description={item.description}
-                  href={item.href}
-                  onClick={item.onClick}
-                  trailing={item.trailing}
-                  destructive={item.destructive}
-                />
-              </li>
-            ))}
-          </ul>
-        </CardShell>
+    <article className={cn(SETTINGS_LIST_CLASS, className)}>
+      {items.map((item, index) => (
+        <div key={item.id} className="flex w-full flex-col">
+          {index > 0 ? <div className="h-px w-full bg-[#e5e7eb]" role="separator" /> : null}
+          <ContractorSettingsItem
+            label={item.label}
+            description={item.description}
+            icon={item.icon}
+            href={item.href}
+            onClick={item.onClick}
+            destructive={item.destructive}
+          />
+        </div>
       ))}
-    </div>
+    </article>
   );
 }

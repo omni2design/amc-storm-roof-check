@@ -117,6 +117,7 @@
 
   --color-foreground-primary: var(--text-primary);
   --color-foreground-brand: var(--text-brand);
+  --color-text-urgent: var(--text-urgent);
   --color-surface-nav-button: var(--surface-nav-button);
   --color-foreground-secondary: var(--text-secondary);
   --color-foreground-muted: var(--text-muted);
@@ -148,6 +149,7 @@
   --color-button-secondary-border: var(--button-secondary-border);
 
   --color-button-navy: var(--button-navy-background);
+  --color-button-navy-background: var(--button-navy-background);
   --color-button-navy-hover: var(--button-navy-background-hover);
   --color-button-navy-active: var(--button-navy-background-active);
   --color-button-navy-text: var(--button-navy-text);
@@ -202,6 +204,11 @@
   --color-status-warning-border: var(--status-warning-border);
   --color-status-success-bg: var(--status-success-bg);
   --color-status-success-text: var(--status-success-text);
+  --color-status-success-icon: var(--status-success-icon);
+  --color-status-warning-icon: var(--status-warning-icon);
+  --color-feedback-success: var(--feedback-success);
+  --color-feedback-danger: var(--feedback-danger);
+  --color-feedback-warning: var(--feedback-warning);
   --color-status-danger-bg: var(--status-danger-bg);
   --color-status-danger-text: var(--status-danger-text);
   --color-status-info-bg: var(--status-info-bg);
@@ -242,6 +249,28 @@
   --color-contractor-calendar-cell-border-today: var(--contractor-calendar-cell-border-today);
   --color-contractor-settings-item-bg: var(--contractor-settings-item-bg);
   --color-contractor-settings-divider: var(--contractor-settings-divider);
+
+  --color-contractor-badge-critical-bg: var(--contractor-badge-critical-bg);
+  --color-contractor-badge-critical-text: var(--contractor-badge-critical-text);
+  --color-contractor-badge-critical-dot: var(--contractor-badge-critical-dot);
+  --color-contractor-badge-high-priority-bg: var(--contractor-badge-high-priority-bg);
+  --color-contractor-badge-high-priority-text: var(--contractor-badge-high-priority-text);
+  --color-contractor-badge-high-priority-dot: var(--contractor-badge-high-priority-dot);
+  --color-contractor-badge-needs-inspection-bg: var(--contractor-badge-needs-inspection-bg);
+  --color-contractor-badge-needs-inspection-text: var(--contractor-badge-needs-inspection-text);
+  --color-contractor-badge-needs-inspection-dot: var(--contractor-badge-needs-inspection-dot);
+  --color-contractor-badge-scheduled-bg: var(--contractor-badge-scheduled-bg);
+  --color-contractor-badge-scheduled-text: var(--contractor-badge-scheduled-text);
+  --color-contractor-badge-scheduled-dot: var(--contractor-badge-scheduled-dot);
+  --color-contractor-badge-contacted-bg: var(--contractor-badge-contacted-bg);
+  --color-contractor-badge-contacted-text: var(--contractor-badge-contacted-text);
+  --color-contractor-badge-contacted-dot: var(--contractor-badge-contacted-dot);
+  --color-contractor-badge-new-bg: var(--contractor-badge-new-bg);
+  --color-contractor-badge-new-text: var(--contractor-badge-new-text);
+  --color-contractor-badge-new-dot: var(--contractor-badge-new-dot);
+  --color-contractor-badge-neutral-bg: var(--contractor-badge-neutral-bg);
+  --color-contractor-badge-neutral-text: var(--contractor-badge-neutral-text);
+  --color-contractor-badge-neutral-dot: var(--contractor-badge-neutral-dot);
 
   --color-input-bg: var(--input-background);
   --color-input-border: var(--input-border-default);

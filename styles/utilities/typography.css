@@ -47,6 +47,14 @@
   letter-spacing: 0.005em;
 }
 
+/** Contractor status badge caption — 10px / 14px (140%), bold, 0.05px tracking */
+@utility text-caption-semibold {
+  font-size: 0.625rem;
+  line-height: 1.4;
+  font-weight: 700;
+  letter-spacing: 0.05px;
+}
+
 @utility text-label {
   font-size: var(--type-label-size);
   line-height: var(--type-label-leading);
