@@ -61,7 +61,9 @@ export function getScheduleViewIndex(pathname: string): number {
 }
 
 export function isScheduleViewSwitch(fromPath: string, toPath: string): boolean {
-  return isScheduleViewRoute(fromPath) && isScheduleViewRoute(toPath);
+  const from = normalizePath(fromPath);
+  const to = normalizePath(toPath);
+  return isScheduleViewRoute(from) && isScheduleViewRoute(to) && from !== to;
 }
 
 export function getScheduleViewDirection(

@@ -36,7 +36,7 @@ function buildVariants(
 
   if (variant === "tab") {
     return {
-      enter: { opacity: 0 },
+      enter: { opacity: 1 },
       center: { opacity: 1 },
       exit: { opacity: 0 },
     };
@@ -63,21 +63,26 @@ export function ContractorPageTransition({ children }: { children: ReactNode }) 
   const reducedMotion = useReducedMotion();
   const variants = buildVariants(variant, reducedMotion ?? false);
   const duration = getContractorTransitionDurationSeconds(variant, reducedMotion ?? false);
+  const skipEnterAnimation = variant === "tab" && !animateInitial;
+  const isTabTransition = variant === "tab";
 
   return (
-    <AnimatePresence mode="wait" initial={animateInitial} custom={direction}>
+    <AnimatePresence mode={isTabTransition ? "sync" : "wait"} initial={animateInitial} custom={direction}>
       <motion.div
-        key={transitionKey}
+        key={isTabTransition ? pathname : transitionKey}
         custom={direction}
         variants={variants}
-        initial="enter"
+        initial={skipEnterAnimation ? false : "enter"}
         animate="center"
         exit="exit"
         transition={{
           duration,
           ease: CONTRACTOR_TRANSITION_EASE,
         }}
-        className={cn("min-h-dvh w-full overflow-x-clip bg-background-default")}
+        className={cn(
+          "min-h-dvh w-full overflow-x-clip",
+          isTabTransition ? "bg-transparent" : "bg-background-default",
+        )}
       >
         {children}
       </motion.div>

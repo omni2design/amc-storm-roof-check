@@ -8,6 +8,7 @@ import {
   getContractorSegmentSlideOffsetPx,
   getContractorTransitionDurationSeconds,
   getScheduleViewDirection,
+  isScheduleViewSwitch,
   type ContractorTransitionDirection,
 } from "@/lib/contractor/contractor-transition";
 
@@ -39,6 +40,10 @@ export function ScheduleViewTransition({ children }: { children: ReactNode }) {
   const pathname = usePathname();
   const reducedMotion = useReducedMotion();
   const previousPathRef = useRef(pathname);
+  const shouldAnimate = useMemo(
+    () => isScheduleViewSwitch(previousPathRef.current, pathname),
+    [pathname],
+  );
   const direction = useMemo(
     () => getScheduleViewDirection(previousPathRef.current, pathname),
     [pathname],
@@ -50,8 +55,12 @@ export function ScheduleViewTransition({ children }: { children: ReactNode }) {
     previousPathRef.current = pathname;
   }, [pathname]);
 
+  if (!shouldAnimate) {
+    return <div className="flex flex-col gap-4">{children}</div>;
+  }
+
   return (
-    <AnimatePresence mode="wait" initial={false} custom={direction}>
+    <AnimatePresence mode="sync" initial={false} custom={direction}>
       <motion.div
         key={pathname}
         custom={direction}
