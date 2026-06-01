@@ -80,7 +80,7 @@ export function ContractorQuickActionBar({ actions, className }: ContractorQuick
   return (
     <div
       className={cn(
-        "contractor-fixed-bottom box-border flex h-[90px] w-full flex-row items-center gap-4 border border-[#e5e7eb] bg-white px-6 py-4",
+        "contractor-fixed-bottom box-border flex h-[90px] w-full flex-row items-center gap-4 border-t border-[#e5e7eb] bg-white px-6 py-4",
         className,
       )}
       role="toolbar"

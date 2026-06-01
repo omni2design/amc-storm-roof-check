@@ -36,7 +36,7 @@ export function ContractorBottomNav({ active, className, onNavigate, hrefs }: Co
     <nav
       aria-label="Contractor portal"
       className={cn(
-        "contractor-fixed-bottom flex h-[90px] items-center justify-between border border-contractor-nav-border bg-contractor-nav-bg py-5",
+        "contractor-fixed-bottom flex h-[90px] items-center justify-between border-t border-contractor-nav-border bg-contractor-nav-bg py-5",
         className,
       )}
     >

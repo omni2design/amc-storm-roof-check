@@ -49,7 +49,7 @@ export function ContractorTopNav({
   return (
     <header
       className={cn(
-        "contractor-fixed-top flex h-20 items-center justify-between border border-contractor-nav-border bg-contractor-nav-bg px-6 shadow-[0_1px_4px_rgb(17_24_39/0.04)]",
+        "contractor-fixed-top flex h-20 items-center justify-between border-b border-contractor-nav-border bg-contractor-nav-bg px-6 shadow-[0_1px_4px_rgb(17_24_39/0.04)]",
         className,
       )}
     >
