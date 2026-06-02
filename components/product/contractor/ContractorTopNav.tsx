@@ -70,7 +70,7 @@ export function ContractorTopNav({
             aria-label="Notifications"
             className="flex size-8 items-center justify-center rounded-pill focus-visible:focus-ring"
           >
-            <ContractorNotificationIcon />
+            <ContractorNotificationIcon tone={variant === "photos" ? "inverse" : "default"} />
           </button>
         ) : (
           <span className="size-8" aria-hidden />

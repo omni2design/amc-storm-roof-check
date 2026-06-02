@@ -13,7 +13,7 @@ export function ProfileSectionHeading({
   className?: string;
 }) {
   return (
-    <h2 className={cn("text-lg font-semibold leading-relaxed text-[#9ca3af]", className)}>{children}</h2>
+    <h2 className={cn("text-lg font-semibold leading-relaxed text-foreground-muted", className)}>{children}</h2>
   );
 }
 
