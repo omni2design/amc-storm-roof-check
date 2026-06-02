@@ -11,7 +11,16 @@ const inter = Inter({
 
 export const metadata: Metadata = {
   title: "AMC Storm Roof Check",
-  description: "Storm damage intake and triage for All Might Contracting.",
+  description: "Homeowner Intake → Contractor Portal",
+  openGraph: {
+    title: "AMC Storm Roof Check",
+    description: "Homeowner Intake → Contractor Portal",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "AMC Storm Roof Check",
+    description: "Homeowner Intake → Contractor Portal",
+  },
   icons: {
     icon: [
       { url: "/icon.svg", type: "image/svg+xml" },
