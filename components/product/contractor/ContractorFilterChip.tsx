@@ -15,22 +15,25 @@ export type ContractorFilterChipProps = Omit<
     icon?: ContractorFilterChipIcon;
   };
 
-const FILTER_ICON_SRC: Record<
-  ContractorFilterChipIcon,
-  { default: string; inverse?: string }
-> = {
-  all: { default: "/icons/filter/all-default.svg", inverse: "/icons/filter/all-inverse.svg" },
-  new: { default: "/icons/filter/new.svg" },
-  urgent: { default: "/icons/filter/urgent.svg" },
-  scheduled: { default: "/icons/filter/scheduled.svg" },
-  completed: { default: "/icons/filter/completed.svg" },
+const FILTER_ICON_SRC: Record<ContractorFilterChipIcon, string> = {
+  all: "/icons/filter/all-default.svg",
+  new: "/icons/filter/new.svg",
+  urgent: "/icons/filter/urgent.svg",
+  scheduled: "/icons/filter/scheduled.svg",
+  completed: "/icons/filter/completed.svg",
 };
 
 function FilterChipIcon({ icon, active }: { icon: ContractorFilterChipIcon; active: boolean }) {
-  const config = FILTER_ICON_SRC[icon];
-  const src = active && config.inverse ? config.inverse : config.default;
-
-  return <img src={src} alt="" width={24} height={24} className="size-6 shrink-0" aria-hidden />;
+  return (
+    <img
+      src={FILTER_ICON_SRC[icon]}
+      alt=""
+      width={24}
+      height={24}
+      className={cn("size-6 shrink-0", active && "brightness-0 invert")}
+      aria-hidden
+    />
+  );
 }
 
 /** Figma `Contractor/Filter Chip` (216:26) — leads overview filter strip. */

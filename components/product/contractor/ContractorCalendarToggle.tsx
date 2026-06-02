@@ -1,6 +1,7 @@
 "use client";
 
 import { motion, useReducedMotion } from "framer-motion";
+import { useLayoutEffect, useRef, useState } from "react";
 import { cn } from "@/lib/utils/cn";
 import { CONTRACTOR_SEGMENT_SPRING } from "@/lib/contractor/contractor-transition";
 import type { CalendarViewMode } from "@/lib/contractor/types";
@@ -25,6 +26,13 @@ const MODE_INDEX: Record<CalendarViewMode, number> = {
   week: 2,
 };
 
+const PILL_TEXT_PADDING_PX = 12;
+
+type PillMetrics = {
+  left: number;
+  width: number;
+};
+
 /** Figma `Contractor Calendar Toggle` — Apple-style sliding pill + view mode switcher. */
 export function ContractorCalendarToggle({
   value,
@@ -33,12 +41,45 @@ export function ContractorCalendarToggle({
   className,
 }: ContractorCalendarToggleProps) {
   const reducedMotion = useReducedMotion();
+  const containerRef = useRef<HTMLDivElement>(null);
+  const tabRefs = useRef<(HTMLButtonElement | null)[]>([]);
+  const [pillMetrics, setPillMetrics] = useState<PillMetrics | null>(null);
   const selectedIndex = MODE_INDEX[value];
   const pillTransition =
     slideSelection && !reducedMotion ? CONTRACTOR_SEGMENT_SPRING : { duration: 0 };
 
+  useLayoutEffect(() => {
+    const container = containerRef.current;
+    const button = tabRefs.current[selectedIndex];
+    if (!container || !button) return;
+
+    const measure = () => {
+      const label = button.querySelector("span");
+      if (!label) return;
+
+      const containerRect = container.getBoundingClientRect();
+      const labelRect = label.getBoundingClientRect();
+
+      setPillMetrics({
+        left: labelRect.left - containerRect.left - PILL_TEXT_PADDING_PX,
+        width: labelRect.width + PILL_TEXT_PADDING_PX * 2,
+      });
+    };
+
+    measure();
+
+    const label = button.querySelector("span");
+    const observer = new ResizeObserver(measure);
+    observer.observe(container);
+    observer.observe(button);
+    if (label) observer.observe(label);
+
+    return () => observer.disconnect();
+  }, [selectedIndex, value]);
+
   return (
     <div
+      ref={containerRef}
       className={cn(
         "relative flex h-11 w-[214px] items-center gap-1 rounded-pill bg-[#f3f4f6] p-1",
         className,
@@ -46,22 +87,27 @@ export function ContractorCalendarToggle({
       role="tablist"
       aria-label="Calendar view"
     >
-      <motion.div
-        aria-hidden
-        className="pointer-events-none absolute top-1 h-9 rounded-pill bg-button-navy shadow-[0_2px_6px_rgb(0_0_0/0.12)]"
-        initial={false}
-        animate={{
-          width: "calc((100% - 0.5rem - 0.5rem) / 3)",
-          left: `calc(0.25rem + ${selectedIndex} * ((100% - 0.5rem - 0.5rem) / 3 + 0.25rem))`,
-        }}
-        transition={pillTransition}
-      />
+      {pillMetrics ? (
+        <motion.div
+          aria-hidden
+          className="pointer-events-none absolute top-1 h-9 rounded-pill bg-button-navy shadow-[0_2px_6px_rgb(0_0_0/0.12)]"
+          initial={false}
+          animate={{
+            left: pillMetrics.left,
+            width: pillMetrics.width,
+          }}
+          transition={pillTransition}
+        />
+      ) : null}
 
-      {MODES.map((mode) => {
+      {MODES.map((mode, index) => {
         const selected = value === mode.id;
         return (
           <button
             key={mode.id}
+            ref={(node) => {
+              tabRefs.current[index] = node;
+            }}
             type="button"
             onClick={() => onChange(mode.id)}
             role="tab"
